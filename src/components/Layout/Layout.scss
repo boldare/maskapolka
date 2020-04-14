@@ -24,6 +24,10 @@
   // }
 
   &__icon {
+    display: block;
+    height: 44vw;
+    width: 100vw;
+
     grid-column: 1 / -1;
     grid-row: 5 / 6;
   }

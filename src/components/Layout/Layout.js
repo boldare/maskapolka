@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import "./Layout.scss"
 import Button from "../Button/Button"
 import Icon from "../Icon/Icon"
+import footerIlu from "../../images/Ilu_Footer.svg"
 
 const Layout = ({ children }) => {
   return (
@@ -16,7 +17,8 @@ const Layout = ({ children }) => {
           Wszelkie prawa zastrzeone przez MatkaPolka.pl | 2020
         </div>
       </footer>
-      <Icon className="footer__icon" type="iluFooter" />
+      <img className="footer__icon" src={footerIlu} />
+      {/* <Icon className="footer__icon" type="iluFooter" /> */}
     </main>
   )
 }

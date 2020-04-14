@@ -8,6 +8,9 @@ const Banner = ({ heading, description }) => {
     <>
       <div className="banner__bg" />
       <div className="banner__scroll-down-bg" />
+      <div className="banner__shape-wrapper">
+        <Icon className="banner__shape" type="bgShape" />
+      </div>
       <section className="banner section">
         {/* <Icon className="banner__logo" type="logo" /> */}
         <div className="banner__logo-text">
@@ -40,7 +43,6 @@ const Banner = ({ heading, description }) => {
           <Icon className="banner__scroll-down-icon" type="arrow" round />
           Zjedź w dół i dowiedz się więcej o akcji Maska Polka
         </div>
-        <Icon className="banner__shape" type="bgShape" />
         <Icon className="banner__illustration" type="iluStart" />
         <FacebookButton
           className="banner__fb-btn"

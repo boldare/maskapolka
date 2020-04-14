@@ -2,9 +2,8 @@
   position: relative;
   display: grid;
   align-items: center;
-  grid-template-rows: max-content 1fr max-content 2fr max-content 2fr 8rem;
+  grid-template-rows: max-content 1fr max-content 2fr max-content 2fr 6rem;
   grid-gap: var(--space-sm);
-  overflow: hidden;
 
   grid-column: 2 / -1;
   grid-row: 1 / 2;
@@ -77,16 +76,19 @@
     display: flex;
     flex-direction: column;
     grid-row: 7 / 8;
+    align-self: start;
+    z-index: 2;
 
     &-icon {
       width: 3rem;
       height: 3rem;
       box-shadow: var(--box-shadow);
       transform: translateY(-50%);
+      background-color: white;
     }
 
     &-bg {
-      height: 8rem;
+      height: 6rem;
       background-color: white;
       justify-self: end;
       width: 100%;
@@ -98,9 +100,16 @@
   }
 
   &__shape {
-    position: absolute;
     width: 50vw;
-    right: 0;
+
+    &-wrapper {
+      height: 100vh;
+      overflow: hidden;
+      justify-self: flex-end;
+
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
   }
 
   &__illustration {
