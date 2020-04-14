@@ -1,9 +1,12 @@
+$scroll-down-height: 6rem;
+
 .banner {
   position: relative;
   display: grid;
   align-items: center;
-  grid-template-rows: max-content 1fr max-content 2fr max-content 2fr 6rem;
+  grid-template-rows: 1fr max-content 2fr max-content 2fr $scroll-down-height;
   grid-gap: var(--space-sm);
+  height: 100vh;
 
   grid-column: 2 / -1;
   grid-row: 1 / 2;
@@ -25,26 +28,9 @@
     transform: rotate(-90deg);
   }
 
-  &__logo-title {
-    font-size: 2.5rem;
-  }
-
-  &__logo-text {
-    display: flex;
-    height: var(--logo-height);
-    color: var(--color-red);
-    flex-direction: column;
-    justify-content: center;
-
-    grid-row: 1 / 2;
-  }
-
-  &__logo-description {
-    color: var(--color-red);
-  }
-
   &__heading {
     grid-row: 3 / 4;
+    max-width: 50rem;
   }
 
   &__buttons {
@@ -73,11 +59,15 @@
   }
 
   &__scroll-down {
-    display: flex;
-    flex-direction: column;
+    @extend %padding-sm--bottom;
     grid-row: 7 / 8;
-    align-self: start;
+    height: $scroll-down-height;
     z-index: 2;
+
+    a {
+      display: flex;
+      flex-direction: column;
+    }
 
     &-icon {
       width: 3rem;
@@ -88,7 +78,7 @@
     }
 
     &-bg {
-      height: 6rem;
+      height: $scroll-down-height;
       background-color: white;
       justify-self: end;
       width: 100%;

@@ -6,12 +6,16 @@
   align-items: center;
   box-shadow: var(--box-shadow);
 
-  &--red {
+  &--red,
+  &--red:hover,
+  &--red:link {
     color: white;
     background-color: var(--color-red);
   }
 
-  &--white {
+  &--white,
+  &--white:hover,
+  &--white:link {
     color: black;
     background-color: white;
   }

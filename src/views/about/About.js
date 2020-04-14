@@ -20,7 +20,7 @@ const steps = [
 
 const About = props => {
   return (
-    <div className="about section">
+    <div className="about section" id="about">
       <h2 className="heading-primary">
         Maska Polka to ogólnopolska oddolna akcja prospołeczna
       </h2>

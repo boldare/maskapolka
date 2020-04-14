@@ -7,7 +7,7 @@ import { Link } from "gatsby"
 
 const Articles = ({ posts }) => {
   return (
-    <section className="articles section">
+    <section className="articles section" id="articles">
       <h2 className="heading-primary">Aktualności:</h2>
       <p className="articles__paragraph heading-secondary">
         Staramy się na bieąco pisać o tym, co się dzieje wokół akcji i nie

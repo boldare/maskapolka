@@ -7,7 +7,8 @@
   }
 
   &__paragraph {
-    @extend %margin-md--v;
+    @extend %margin-lg--v;
+    max-width: 50rem;
   }
 
   &__instruction {
@@ -17,13 +18,21 @@
   }
 
   &__icon-wrapper {
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 100%;
+    }
+
     @extend %margin-lg--bottom;
     position: relative;
     display: flex;
     justify-content: center;
 
     .icon {
-      height: 40vh;
+      position: absolute;
+      height: 100%;
     }
 
     &::after {
@@ -31,7 +40,7 @@
       position: absolute;
       margin-top: var(--space-md);
       height: 100%;
-      width: 40vh;
+      width: 100%;
       top: 0;
       left: 50%;
       transform: translateX(-50%);

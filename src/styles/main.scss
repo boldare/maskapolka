@@ -20,8 +20,8 @@
   --space-xs: 1rem;
   --space-sm: 1.5rem;
   --space-md: 2.5rem;
-  --space-lg: 4rem;
-  --space-xl: 8rem;
+  --space-lg: 5rem;
+  --space-xl: 12rem;
 }
 
 body {
@@ -43,6 +43,7 @@ a,
 a:hover,
 a:focus {
   text-decoration: none;
+  color: inherit;
 }
 
 *,
@@ -56,12 +57,6 @@ ol {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-a,
-a:link,
-a:visited {
-  color: inherit;
 }
 
 button {
@@ -84,47 +79,4 @@ button {
 
 .section {
   @extend %padding-lg--top;
-}
-
-$col: 144px;
-
-.main {
-  display: grid;
-  grid-template-columns:
-    minmax($col, 1fr) repeat(8, minmax(min-content, $col))
-    minmax($col, 1fr);
-  grid-template-rows: 100vh min-content min-content;
-
-  &__logo {
-    position: fixed;
-    display: flex;
-    top: var(--space-lg);
-    left: 0;
-    width: $col;
-    z-index: 2;
-    justify-content: center;
-
-    @include breakpoint(xl) {
-      left: calc((100vw - 8 * #{$col}) / 2 - #{$col});
-    }
-
-    .icon {
-      fill: var(--color-red);
-      height: 10rem;
-    }
-  }
-
-  &__hamburger {
-    position: fixed;
-    display: flex;
-    right: $col;
-    top: var(--space-lg);
-    height: var(--logo-height);
-    align-items: center;
-
-    @include breakpoint(xl) {
-      right: calc((100vw - 8 * #{$col}) / 2);
-      transform: translateX(100%);
-    }
-  }
 }

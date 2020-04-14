@@ -1,0 +1,52 @@
+.article {
+  &__img {
+    height: 40vh;
+    border-radius: 1rem;
+
+    grid-row: 1 / 2;
+  }
+
+  &__fb-btn {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: rotate(-90deg);
+  }
+
+  &__logo-title {
+    @extend %margin-sm--bottom;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  &__logo-text {
+    display: flex;
+    height: var(--logo-height);
+    color: var(--color-red);
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+
+    grid-row: 1 / 2;
+  }
+
+  &__logo-description {
+    color: var(--color-red);
+  }
+
+  &__comments {
+    grid-column: 2 / 10;
+    grid-row: 2 / 3;
+  }
+
+  &__title,
+  &__content {
+    @include breakpoint(md) {
+      padding: 0 10%;
+    }
+  }
+
+  &__content {
+    @extend %margin-xl--bottom;
+  }
+}

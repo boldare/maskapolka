@@ -8,7 +8,7 @@ const MapView = () => {
 
   return (
     <>
-      <section className="map-view__faq section">
+      <section className="map-view__faq section" id="map">
         <Collapse
           open={isHowToFindOpen}
           title={"Jak znaleźć miejsca szycia czy odbioru"}

@@ -11,21 +11,11 @@ const IndexPage = ({
     postItems: { nodes: posts },
   },
 }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="main__logo">
-        <Icon type="logo" />
-      </div>
       <Banner heading={heading} description={description} />
-      <div className="main__hamburger">
-        <Hamburger
-          open={isMenuOpen}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        />
-      </div>
+
       <Articles posts={posts} />
       <MapView />
       <About />

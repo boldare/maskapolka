@@ -1,23 +1,27 @@
 import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { DiscussionEmbed } from "disqus-react"
 import { BlogPostType } from "~/types"
+import { Layout } from "@components"
+import { Article } from "@views"
 
 const ArticleTemplate = ({
   data: {
-    post: { slug, title, contentful_id: id },
+    post: {
+      slug,
+      title,
+      contentful_id: id,
+      heroImage,
+      content: {
+        childMarkdownRemark: { html: body },
+      },
+    },
   },
 }) => {
   return (
-    <DiscussionEmbed
-      shortname="maskapolka"
-      config={{
-        url: `https://maskapolka.pl/${slug}`,
-        identifier: id,
-        title: title,
-      }}
-    />
+    <Layout>
+      <Article id={id} slug={slug} title={title} img={heroImage} body={body} />
+    </Layout>
   )
 }
 
@@ -32,7 +36,7 @@ export const pageQuery = graphql`
       slug
       title
       createdAt(formatString: "DD/MM/YYYY")
-      description {
+      content {
         childMarkdownRemark {
           html
         }

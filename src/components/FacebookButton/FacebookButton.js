@@ -6,7 +6,11 @@ import { classnames } from "~/utils"
 
 const FacebookButton = ({ className, link, text }) => {
   return (
-    <a className={classnames("facebook-btn", className)} href={link}>
+    <a
+      className={classnames("facebook-btn", className)}
+      href={link}
+      target="_blank"
+    >
       {text}
       <Icon className={"facebook-btn__icon"} type="facebook" round></Icon>
     </a>
