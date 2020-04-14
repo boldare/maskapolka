@@ -7,7 +7,16 @@ import { BlogPostType } from "~/types"
 
 const IndexPage = ({
   data: {
-    settings: { heading, description },
+    settings: {
+      heading,
+      description,
+      howToFindPlaces: {
+        childMarkdownRemark: { html: howToFind },
+      },
+      howToAddPlace: {
+        childMarkdownRemark: { html: howToAdd },
+      },
+    },
     postItems: { nodes: posts },
   },
 }) => {
@@ -17,7 +26,7 @@ const IndexPage = ({
       <Banner heading={heading} description={description} />
 
       <Articles posts={posts} />
-      <MapView />
+      <MapView howToFind={howToFind} howToAdd={howToAdd} />
       <About />
       {/* <div className="map">
         <iframe
@@ -33,9 +42,24 @@ const IndexPage = ({
 
 export const pageQuery = graphql`
   query HomePage {
-    settings: contentfulUstawienia {
+    settings: contentfulUstawieniaSingle {
       heading
       description
+      howToFindPlaces {
+        childMarkdownRemark {
+          html
+        }
+      }
+      howToAddPlace {
+        childMarkdownRemark {
+          html
+        }
+      }
+      aboutAction {
+        childMarkdownRemark {
+          html
+        }
+      }
     }
 
     postItems: allContentfulBlogPost {
@@ -43,7 +67,7 @@ export const pageQuery = graphql`
         slug
         title
         createdAt(formatString: "DD/MM/YYYY")
-        description {
+        content {
           childMarkdownRemark {
             excerpt
           }

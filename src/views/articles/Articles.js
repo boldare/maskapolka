@@ -14,17 +14,19 @@ const Articles = ({ posts }) => {
         tylko.
       </p>
       <ul className="articles__list">
-        {posts.map(post => (
-          <li className="articles__list-item" key={post.slug}>
-            <Link to={`/blog/${post.slug}`}>
-              <ArticleTile
-                title={post.title}
-                excerpt={post.description.childMarkdownRemark.excerpt}
-                image={post.heroImage}
-              />
-            </Link>
-          </li>
-        ))}
+        {posts
+          .filter(post => post.content)
+          .map(post => (
+            <li className="articles__list-item" key={post.slug}>
+              <Link to={`/blog/${post.slug}`}>
+                <ArticleTile
+                  title={post.title}
+                  excerpt={post.content.childMarkdownRemark.excerpt}
+                  image={post.heroImage}
+                />
+              </Link>
+            </li>
+          ))}
       </ul>
     </section>
   )
