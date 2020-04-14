@@ -1,8 +1,10 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@jagoral`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,8 +29,27 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken:
+          process.env.CONTENTFUL_API === "preview"
+            ? process.env.CONTENTFUL_PREVIEW_TOKEN
+            : process.env.CONTENTFUL_DELIVERY_TOKEN,
+        host:
+          process.env.CONTENTFUL_API === "preview"
+            ? "preview.contentful.com"
+            : "cdn.contentful.com",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        data: `@import "${__dirname}/src/styles/abstracts";`,
+      },
+    },
+    `gatsby-plugin-svg-sprite-loader`,
+    `gatsby-transformer-remark`,
   ],
 }

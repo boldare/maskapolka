@@ -1,0 +1,17 @@
+.facebook-btn {
+  display: flex;
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  align-items: center;
+  font-size: 1.4rem;
+  background-color: #3b5998;
+  color: white;
+
+  &__icon {
+    @extend %margin-xs--left;
+
+    height: 3rem;
+    fill: white;
+    border: 1px solid white;
+  }
+}

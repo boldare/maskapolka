@@ -1,21 +1,71 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
+import PropTypes from "prop-types"
+import { SEO } from "@components"
+import { Banner } from "@views"
+import { BlogPostType } from "~/types"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const IndexPage = ({
+  data: {
+    settings: { heading, description },
+    posts,
+  },
+}) => {
+  console.log(posts)
+  return (
+    <>
+      <SEO title="Home" />
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+      <Banner heading={heading} description={description} />
+      <div className="map">
+        <iframe
+          title="map"
+          allow="geolocation *; camera *;"
+          frameBorder="0"
+          src="https://www.mapotic.com/maskapolka-1/embed"
+        ></iframe>
+      </div>
+    </>
+  )
+}
+
+export const pageQuery = graphql`
+  query HomePage {
+    settings: contentfulUstawienia {
+      heading
+      description
+    }
+
+    posts: allContentfulBlogPost {
+      edges {
+        node {
+          slug
+          title
+          createdAt(formatString: "DD/MM/YYYY")
+          description {
+            childMarkdownRemark {
+              html
+            }
+          }
+          heroImage {
+            fluid {
+              ...GatsbyContentfulFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    settings: PropTypes.shape({
+      heading: PropTypes.string,
+      description: PropTypes.string,
+    }),
+  }),
+  posts: PropTypes.shape({ nodes: PropTypes.arrayOf(BlogPostType) }),
+}
 
 export default IndexPage

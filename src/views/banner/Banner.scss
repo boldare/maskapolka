@@ -1,0 +1,99 @@
+.banner {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: max-content max-content max-content 1fr 8rem;
+  height: 100vh;
+  background-color: var(--color-bg);
+  align-items: center;
+  grid-gap: var(--space-sm);
+
+  &__fb-btn {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: rotate(-90deg);
+  }
+
+  &__logo {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    fill: var(--color-red);
+  }
+
+  &__logo-title {
+    font-size: 2.5rem;
+  }
+
+  &__logo-text {
+    color: var(--color-red);
+
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+
+  &__logo-description {
+    color: var(--color-red);
+  }
+
+  &__hamburger {
+    grid-column: 10 / 11;
+    grid-row: 1 / 2;
+    z-index: 1;
+  }
+
+  &__heading {
+    grid-column: 3 / 8;
+    grid-row: 2 / 3;
+  }
+
+  &__paragraph {
+    grid-column: 3 / 8;
+    grid-row: 3 / 4;
+  }
+
+  &__buttons {
+    display: flex;
+    grid-column: 3 / -1;
+    grid-row: 4 / 5;
+
+    .button {
+      @extend %margin-md--right;
+    }
+  }
+
+  &__icon {
+    @extend %margin-xs--right;
+    height: 3rem;
+    width: 3rem;
+    background-color: white;
+  }
+
+  &__scroll-down {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3 / -1;
+    grid-row: 5 / 6;
+
+    &-icon {
+      width: 3rem;
+      height: 3rem;
+      box-shadow: var(--box-shadow);
+      transform: translateY(-50%);
+    }
+  }
+
+  &__shape {
+    position: absolute;
+    width: 50vw;
+    right: 0;
+  }
+
+  &__illustration {
+    position: absolute;
+    right: var(--space-sm);
+    bottom: 0;
+    height: 80vh;
+    z-index: 0;
+  }
+}

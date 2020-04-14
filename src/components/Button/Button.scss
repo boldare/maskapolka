@@ -1,0 +1,10 @@
+.button {
+  display: flex;
+  padding: 1rem 1.6rem;
+  font-size: inherit;
+  border-radius: 4rem;
+  align-items: center;
+  background-color: var(--color-red);
+  box-shadow: var(--box-shadow);
+  color: white;
+}
