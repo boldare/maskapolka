@@ -7,6 +7,7 @@ const Banner = ({ heading, description }) => {
   return (
     <>
       <div className="banner__bg" />
+      <div className="banner__scroll-down-bg" />
       <section className="banner section">
         {/* <Icon className="banner__logo" type="logo" /> */}
         <div className="banner__logo-text">
@@ -21,14 +22,16 @@ const Banner = ({ heading, description }) => {
         open={isMenuOpen}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       /> */}
-        <h1 className="banner__heading heading-primary">{heading}</h1>
-        <p className="banner__paragraph">{description}</p>
+        <div className="banner__heading">
+          <h1 className="heading-primary">{heading}</h1>
+          <p className="banner__paragraph">{description}</p>
+        </div>
         <div className="banner__buttons">
-          <Button>
+          <Button color="red">
             <Icon className="banner__icon" type="pin" round />
             Znajdź punkt
           </Button>
-          <Button>
+          <Button color="white">
             <Icon className="banner__icon" type="plus" round />
             Dodaj punkt
           </Button>

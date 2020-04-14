@@ -4,7 +4,15 @@
   font-size: inherit;
   border-radius: 4rem;
   align-items: center;
-  background-color: var(--color-red);
   box-shadow: var(--box-shadow);
-  color: white;
+
+  &--red {
+    color: white;
+    background-color: var(--color-red);
+  }
+
+  &--white {
+    color: black;
+    background-color: white;
+  }
 }

@@ -22,11 +22,14 @@ const icons = {
   plus: plus,
 }
 
-const Icon = ({ className, type, round }) => {
+const Icon = ({ className, type, round, shadow }) => {
   const icon = icons[type]
   return (
     <svg
-      className={classnames("icon", className, { "icon--round": round })}
+      className={classnames("icon", className, {
+        "icon--round": round,
+        "icon--shadow": shadow,
+      })}
       viewBox={icon.viewBox}
     >
       <use xlinkHref={icon.url} />
@@ -47,11 +50,13 @@ Icon.propTypes = {
   ]).isRequired,
   round: PropTypes.bool,
   className: PropTypes.string,
+  shadow: PropTypes.bool,
 }
 
 Icon.defaultProps = {
   className: "",
   round: false,
+  shadow: false,
 }
 
 export default Icon

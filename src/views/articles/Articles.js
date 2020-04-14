@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import "./Articles.scss"
 import { BlogPostType } from "~/types"
 import { ArticleTile } from "@components"
+import { Link } from "gatsby"
 
 const Articles = ({ posts }) => {
   return (
@@ -15,11 +16,13 @@ const Articles = ({ posts }) => {
       <ul className="articles__list">
         {posts.map(post => (
           <li className="articles__list-item" key={post.slug}>
-            <ArticleTile
-              title={post.title}
-              excerpt={post.description.childMarkdownRemark.excerpt}
-              image={post.heroImage}
-            />
+            <Link to={`/blog/${post.slug}`}>
+              <ArticleTile
+                title={post.title}
+                excerpt={post.description.childMarkdownRemark.excerpt}
+                image={post.heroImage}
+              />
+            </Link>
           </li>
         ))}
       </ul>

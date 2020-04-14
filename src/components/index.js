@@ -1,5 +1,6 @@
 import ArticleTile from "./ArticleTile/ArticleTile"
 import Button from "./Button/Button"
+import Collapse from "./Collapse/Collapse"
 import FacebookButton from "./FacebookButton/FacebookButton"
 import Hamburger from "./Hamburger/Hamburger"
 import Icon from "./Icon/Icon"
@@ -11,6 +12,7 @@ import SEO from "./SEO/SEO"
 export {
   ArticleTile,
   Button,
+  Collapse,
   Icon,
   FacebookButton,
   Hamburger,

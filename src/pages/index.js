@@ -22,7 +22,6 @@ const IndexPage = ({
       <Banner heading={heading} description={description} />
       <div className="main__hamburger">
         <Hamburger
-          className="main__hamburger"
           open={isMenuOpen}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
