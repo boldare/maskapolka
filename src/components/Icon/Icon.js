@@ -6,7 +6,6 @@ import bgShape from "../../images/bg-shape.svg"
 import logo from "../../images/logo.svg"
 import pin from "../../images/pin.svg"
 import plus from "../../images/plus.svg"
-import iluFooter from "../../images/Ilu_Footer.svg"
 import iluStart from "../../images/Ilu_Start.svg"
 import iluStart2 from "../../images/Ilu_Start_2.svg"
 import instruction1 from "../../images/instruction-1.svg"
@@ -21,7 +20,6 @@ const icons = {
   facebook: facebookLogo,
   iluStart: iluStart,
   iluStart2: iluStart2,
-  iluFooter: iluFooter,
   instruction1: instruction1,
   instruction2: instruction2,
   instruction3: instruction3,

@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import "./Layout.scss"
 import Button from "../Button/Button"
 import Icon from "../Icon/Icon"
-import footerIlu from "../../images/Ilu_Footer.svg"
 import Hamburger from "../Hamburger/Hamburger"
 import { Link } from "gatsby"
 
@@ -70,14 +69,14 @@ const Layout = ({ children }) => {
       <footer className="footer" id="footer">
         <Button>Skontaktuj się z nami</Button>
         <div>
-          Strona zaprojektowana dzięki wsparcu firmy: Boldare
+          Strona zaprojektowana dzięki wsparciu firmy: Boldare
           <br />
           Wszelkie prawa zastrzeone przez MatkaPolka.pl | 2020
         </div>
       </footer>
       <img
         className="footer__icon"
-        src={footerIlu}
+        src="/images/Ilu_Footer.svg"
         alt="Społeczność w maskach"
       />
     </main>
