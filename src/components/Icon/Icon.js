@@ -8,6 +8,7 @@ import pin from "../../images/pin.svg"
 import plus from "../../images/plus.svg"
 import iluFooter from "../../images/Ilu_Footer.svg"
 import iluStart from "../../images/Ilu_Start.svg"
+import iluStart2 from "../../images/Ilu_Start_2.svg"
 import instruction1 from "../../images/instruction-1.svg"
 import instruction2 from "../../images/instruction-2.svg"
 import instruction3 from "../../images/instruction-3.svg"
@@ -19,6 +20,7 @@ const icons = {
   bgShape: bgShape,
   facebook: facebookLogo,
   iluStart: iluStart,
+  iluStart2: iluStart2,
   iluFooter: iluFooter,
   instruction1: instruction1,
   instruction2: instruction2,
@@ -44,16 +46,7 @@ const Icon = ({ className, type, round, shadow }) => {
 }
 
 Icon.propTypes = {
-  type: PropTypes.oneOf([
-    "arrow",
-    "bgShape",
-    "facebook",
-    "iluStart",
-    "iluFooter",
-    "logo",
-    "pin",
-    "plus",
-  ]).isRequired,
+  type: PropTypes.oneOf(Object.keys(icons)).isRequired,
   round: PropTypes.bool,
   className: PropTypes.string,
   shadow: PropTypes.bool,

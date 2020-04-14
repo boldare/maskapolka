@@ -11,7 +11,7 @@ const MapView = () => {
       <section className="map-view__faq section" id="map">
         <Collapse
           open={isHowToFindOpen}
-          title={"Jak znaleźć miejsca szycia czy odbioru"}
+          title={"Jak znaleźć miejsca"}
           onClick={() => setIsHowToFindOpen(!isHowToFindOpen)}
         >
           {"XD"}

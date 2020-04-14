@@ -38,6 +38,7 @@ const Banner = ({ heading, description }) => {
           </Link>
         </div>
         <Icon className="banner__illustration" type="iluStart" />
+        <Icon className="banner__illustration--2" type="iluStart2" />
         <FacebookButton
           className="banner__fb-btn"
           text="Dołącz do akcji"

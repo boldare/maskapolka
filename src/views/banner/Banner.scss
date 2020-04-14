@@ -109,4 +109,12 @@ $scroll-down-height: 6rem;
     height: 80vh;
     z-index: 0;
   }
+
+  &__illustration--2 {
+    position: absolute;
+    right: calc(var(--space-sm) + 22%);
+    bottom: 0;
+    height: 32vh;
+    z-index: 0;
+  }
 }
