@@ -1,0 +1,43 @@
+.about {
+  grid-row: 5 / 6;
+  grid-column: 2 / 10;
+
+  .heading-primary {
+    max-width: 80rem;
+  }
+
+  &__paragraph {
+    @extend %margin-md--v;
+  }
+
+  &__instruction {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: var(--space-md);
+  }
+
+  &__icon-wrapper {
+    @extend %margin-lg--bottom;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .icon {
+      height: 40vh;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      margin-top: var(--space-md);
+      height: 100%;
+      width: 40vh;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-bg);
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+}

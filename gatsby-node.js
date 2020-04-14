@@ -40,7 +40,9 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+const SvgSpriteLoaderPlugin = require("svg-sprite-loader/plugin")
+
+exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
@@ -50,4 +52,21 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       },
     },
   })
+
+  const config = getConfig()
+
+  options = {
+    spriteFilename: "sprites.[contenthash].svg",
+    symbolId: "[name]--[hash:base64:5]",
+  }
+
+  config.module.rules.push({
+    test: /\.svg$/,
+    loader: require.resolve("svg-sprite-loader"),
+    options,
+  })
+
+  config.plugins.push(new SvgSpriteLoaderPlugin())
+
+  actions.replaceWebpackConfig(config)
 }

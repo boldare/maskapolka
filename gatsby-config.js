@@ -49,7 +49,7 @@ module.exports = {
         data: `@import "${__dirname}/src/styles/abstracts";`,
       },
     },
-    `gatsby-plugin-svg-sprite-loader`,
+    // `gatsby-plugin-svg-sprite-loader`,
     `gatsby-transformer-remark`,
   ],
 }

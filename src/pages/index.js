@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { SEO, Hamburger, Icon, Layout } from "@components"
-import { Banner, Articles, MapView } from "@views"
+import { Banner, Articles, MapView, About } from "@views"
 import { BlogPostType } from "~/types"
 
 const IndexPage = ({
@@ -28,6 +28,7 @@ const IndexPage = ({
       </div>
       <Articles posts={posts} />
       <MapView />
+      <About />
       {/* <div className="map">
         <iframe
           title="map"

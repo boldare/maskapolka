@@ -6,8 +6,11 @@ import bgShape from "../../images/bg-shape.svg"
 import logo from "../../images/logo.svg"
 import pin from "../../images/pin.svg"
 import plus from "../../images/plus.svg"
-import iluStart from "../../images/Ilu_Start.svg"
 import iluFooter from "../../images/Ilu_Footer.svg"
+import iluStart from "../../images/Ilu_Start.svg"
+import instruction1 from "../../images/instruction-1.svg"
+import instruction2 from "../../images/instruction-2.svg"
+import instruction3 from "../../images/instruction-3.svg"
 import facebookLogo from "../../images/facebook.svg"
 import { classnames } from "~/utils"
 
@@ -17,6 +20,9 @@ const icons = {
   facebook: facebookLogo,
   iluStart: iluStart,
   iluFooter: iluFooter,
+  instruction1: instruction1,
+  instruction2: instruction2,
+  instruction3: instruction3,
   logo: logo,
   pin: pin,
   plus: plus,
