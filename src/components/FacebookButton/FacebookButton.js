@@ -2,18 +2,21 @@ import React from "react"
 import PropTypes from "prop-types"
 import "./FacebookButton.scss"
 import Icon from "../Icon/Icon"
+import { Button } from "@components"
 import { classnames } from "~/utils"
 
 const FacebookButton = ({ className, link, text }) => {
   return (
     <a
-      className={classnames("facebook-btn", className)}
+      className={classnames(className)}
       href={link}
       target="_blank"
       rel="noopener noreferrer"
     >
-      {text}
-      <Icon className={"facebook-btn__icon"} type="facebook" round></Icon>
+      <Button color="blue">
+        {text}
+        <Icon className={"facebook-btn__icon"} type="facebook" round></Icon>
+      </Button>
     </a>
   )
 }

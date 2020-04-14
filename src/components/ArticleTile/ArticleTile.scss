@@ -3,9 +3,26 @@
     @extend %margin-sm--v;
   }
 
+  &:hover &__title {
+    text-decoration: underline;
+  }
+
+  &:hover &__img {
+    transform: scale(1.05);
+  }
+
+  &__img-wrapper {
+    overflow: hidden;
+    border-radius: 1.5rem;
+  }
+
+  &__title {
+    transition: all 0.2s;
+  }
+
   &__img {
     height: 30rem;
-    border-radius: 1.5rem;
+    transition: all 0.3s;
   }
 
   &__read-more {

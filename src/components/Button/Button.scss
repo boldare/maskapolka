@@ -5,6 +5,16 @@
   border-radius: 4rem;
   align-items: center;
   box-shadow: var(--box-shadow);
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-400);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
 
   &--red,
   &--red:hover,
@@ -18,5 +28,12 @@
   &--white:link {
     color: black;
     background-color: white;
+  }
+
+  &--blue,
+  &--blue:hover,
+  &--blue:link {
+    color: white;
+    background-color: #3b5998;
   }
 }
