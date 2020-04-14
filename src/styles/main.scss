@@ -124,6 +124,7 @@ $col: 144px;
 
     @include breakpoint(xl) {
       right: calc((100vw - 8 * #{$col}) / 2);
+      transform: translateX(100%);
     }
   }
 }

@@ -63,8 +63,8 @@ exports.onCreateWebpackConfig = ({ actions, getConfig, rules }) => {
   }
 
   options = {
-    spriteFilename: "sprites.[contenthash].svg",
-    symbolId: "[name]--[hash:base64:5]",
+    // spriteFilename: "sprites.[contenthash].svg",
+    // symbolId: "[name]--[hash:base64:5]",
     extract: true,
   }
 
