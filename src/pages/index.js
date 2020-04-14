@@ -16,6 +16,9 @@ const IndexPage = ({
       howToAddPlace: {
         childMarkdownRemark: { html: howToAdd },
       },
+      aboutAction: {
+        childMarkdownRemark: { html: about },
+      },
     },
     postItems: { nodes: posts },
   },
@@ -27,7 +30,7 @@ const IndexPage = ({
 
       <Articles posts={posts} />
       <MapView howToFind={howToFind} howToAdd={howToAdd} />
-      <About />
+      <About description={about} />
       {/* <div className="map">
         <iframe
           title="map"

@@ -18,17 +18,18 @@ const steps = [
   },
 ]
 
-const About = props => {
+const About = ({ description }) => {
   return (
     <div className="about section" id="about">
       <h2 className="heading-primary">
         Maska Polka to ogólnopolska oddolna akcja prospołeczna
       </h2>
-      <p className="about__paragraph">
-        Tworząc akcje zależało nam na wzajemnej wymianie dobrych praktyk oraz
-        ludzi oraz firm tworzących lub potrzebujących masek dla zapewnienia
-        bezpieczeństwa sobie oraz bliskim.
-      </p>
+      <div
+        className="about__paragraph"
+        dangerouslySetInnerHTML={{
+          __html: description,
+        }}
+      ></div>
       <p className="about__paragraph heading-secondary">
         Jak poprawnie używać maseczki
       </p>
@@ -46,6 +47,8 @@ const About = props => {
   )
 }
 
-About.propTypes = {}
+About.propTypes = {
+  description: PropTypes.string.isRequired,
+}
 
 export default React.memo(About)
