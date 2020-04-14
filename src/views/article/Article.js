@@ -9,7 +9,7 @@ const Article = ({ id, slug, title, body, img }) => {
   return (
     <section className="article__comments section">
       <Image className="article__img" fluid={img.fluid} />
-      <h1 class="article__title heading-primary">{title}</h1>
+      <h1 className="article__title heading-primary">{title}</h1>
       <div
         className="article__content"
         dangerouslySetInnerHTML={{
@@ -30,10 +30,10 @@ const Article = ({ id, slug, title, body, img }) => {
 
 Article.propTypes = {
   id: PropTypes.string.isRequired,
-  img: ImageType,
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  img: ImageType,
 }
 
 export default React.memo(Article)

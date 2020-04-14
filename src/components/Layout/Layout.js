@@ -75,8 +75,11 @@ const Layout = ({ children }) => {
           Wszelkie prawa zastrzeone przez MatkaPolka.pl | 2020
         </div>
       </footer>
-      <img className="footer__icon" src={footerIlu} />
-      {/* <Icon className="footer__icon" type="iluFooter" /> */}
+      <img
+        className="footer__icon"
+        src={footerIlu}
+        alt="Społeczność w maskach"
+      />
     </main>
   )
 }

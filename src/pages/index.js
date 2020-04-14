@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import { SEO, Hamburger, Icon, Layout } from "@components"
+import { SEO, Layout } from "@components"
 import { Banner, Articles, MapView, About } from "@views"
 import { BlogPostType } from "~/types"
 
@@ -31,14 +31,6 @@ const IndexPage = ({
       <Articles posts={posts} />
       <MapView howToFind={howToFind} howToAdd={howToAdd} />
       <About description={about} />
-      {/* <div className="map">
-        <iframe
-          title="map"
-          allow="geolocation *; camera *;"
-          frameBorder="0"
-          src="https://www.mapotic.com/maskapolka-1/embed"
-        ></iframe>
-      </div> */}
     </Layout>
   )
 }
@@ -65,7 +57,9 @@ export const pageQuery = graphql`
       }
     }
 
-    postItems: allContentfulBlogPost {
+    postItems: allContentfulBlogPost(
+      filter: { content: { childMarkdownRemark: { excerpt: { ne: null } } } }
+    ) {
       nodes {
         slug
         title

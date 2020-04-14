@@ -14,24 +14,22 @@ const Articles = ({ posts }) => {
         tylko.
       </p>
       <ul className="articles__list">
-        {posts
-          .filter(post => post.content)
-          .map(post => (
-            <li className="articles__list-item" key={post.slug}>
-              <Link to={`/blog/${post.slug}`}>
-                <ArticleTile
-                  title={post.title}
-                  excerpt={post.content.childMarkdownRemark.excerpt}
-                  image={post.heroImage}
-                />
-              </Link>
-            </li>
-          ))}
+        {posts.map(post => (
+          <li className="articles__list-item" key={post.slug}>
+            <Link to={`/blog/${post.slug}`}>
+              <ArticleTile
+                title={post.title}
+                excerpt={post.content.childMarkdownRemark.excerpt}
+                image={post.heroImage}
+              />
+            </Link>
+          </li>
+        ))}
       </ul>
     </section>
   )
 }
 
-Articles.propTypes = { posts: PropTypes.arrayOf(BlogPostType).isRequired }
+Articles.propTypes = { posts: PropTypes.arrayOf(PropTypes.shape(BlogPostType)) }
 
 export default React.memo(Articles)

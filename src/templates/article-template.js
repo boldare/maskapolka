@@ -26,7 +26,7 @@ const ArticleTemplate = ({
 }
 
 ArticleTemplate.propTypes = {
-  data: PropTypes.shape({ post: BlogPostType }),
+  data: PropTypes.shape({ post: PropTypes.shape(BlogPostType) }).isRequired,
 }
 
 export const pageQuery = graphql`

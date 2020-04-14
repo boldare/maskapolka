@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Button } from "@components"
 import "./Press.scss"
 
@@ -35,7 +34,5 @@ const Press = props => {
     </>
   )
 }
-
-Press.propTypes = {}
 
 export default React.memo(Press)

@@ -10,6 +10,7 @@ const FacebookButton = ({ className, link, text }) => {
       className={classnames("facebook-btn", className)}
       href={link}
       target="_blank"
+      rel="noopener noreferrer"
     >
       {text}
       <Icon className={"facebook-btn__icon"} type="facebook" round></Icon>

@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import { classnames } from "~/utils"
+import { ImageFluid } from "~/types"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -19,7 +20,7 @@ const Image = ({ className, fluid }) => {
 }
 
 Image.propTypes = {
-  fluid: PropTypes.node.isRequired,
+  fluid: ImageFluid.isRequired,
   className: PropTypes.string,
 }
 
