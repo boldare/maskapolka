@@ -1,0 +1,8 @@
+.map-view {
+  grid-row: 3 / 4;
+  grid-column: 1 / -1;
+
+  &__map {
+    height: 50vh;
+  }
+}

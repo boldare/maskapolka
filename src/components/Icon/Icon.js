@@ -7,6 +7,7 @@ import logo from "../../images/logo.svg"
 import pin from "../../images/pin.svg"
 import plus from "../../images/plus.svg"
 import iluStart from "../../images/Ilu_Start.svg"
+import iluFooter from "../../images/Ilu_Footer.svg"
 import facebookLogo from "../../images/facebook.svg"
 import { classnames } from "~/utils"
 
@@ -15,6 +16,7 @@ const icons = {
   bgShape: bgShape,
   facebook: facebookLogo,
   iluStart: iluStart,
+  iluFooter: iluFooter,
   logo: logo,
   pin: pin,
   plus: plus,
@@ -38,6 +40,7 @@ Icon.propTypes = {
     "bgShape",
     "facebook",
     "iluStart",
+    "iluFooter",
     "logo",
     "pin",
     "plus",

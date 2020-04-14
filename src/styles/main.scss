@@ -2,7 +2,7 @@
 
 :root {
   --color-red: #d4353b;
-  --color-bg: #d7eaee;
+  --color-bg: #cbe8ec;
 
   --color-primary: #ead050;
   --color-secondary: #6200ee;
@@ -66,5 +66,33 @@ button {
   iframe {
     width: 100%;
     height: 100%;
+  }
+}
+
+.section {
+  @extend %padding-lg--top;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr repeat(8, minmax(min-content, 16rem)) 1fr;
+  grid-template-rows: 100vh min-content min-content;
+
+  &__logo {
+    position: fixed;
+    top: var(--space-lg);
+    left: 10rem;
+    z-index: 2;
+
+    .icon {
+      fill: var(--color-red);
+      height: 10rem;
+    }
+  }
+
+  &__hamburger {
+    position: fixed;
+    left: 80%;
+    top: var(--space-lg);
   }
 }

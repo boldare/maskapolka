@@ -1,10 +1,12 @@
 import PropTypes from "prop-types"
 
-export const ImageType = PropTypes.shape
+export const ImageType = PropTypes.node
 
 export const MarkdownType = PropTypes.shape({
-  childMarkdownRemark: PropTypes.shape({ html: PropTypes.string.isRequired })
-    .isRequired,
+  childMarkdownRemark: PropTypes.shape({
+    html: PropTypes.string,
+    excerpt: PropTypes.string,
+  }).isRequired,
 })
 
 export const AuthorType = {
@@ -20,5 +22,5 @@ export const BlogPostType = {
   heroImage: ImageType.isRequired,
   description: MarkdownType,
   content: MarkdownType,
-  source: PropTypes.string.isRequired,
+  source: PropTypes.string,
 }

@@ -1,0 +1,14 @@
+.articles {
+  grid-column: 2 / 10;
+  grid-row: 2 / 3;
+
+  &__paragraph {
+    @extend %margin-lg--v;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--space-md);
+  }
+}

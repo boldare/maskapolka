@@ -26,7 +26,12 @@ body {
 }
 
 .heading-primary {
+  @extend %margin-lg--v;
   font-size: 6rem;
+}
+
+.heading-secondary {
+  font-size: 3rem;
 }
 
 h1,

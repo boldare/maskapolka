@@ -1,3 +1,5 @@
+import Articles from "./articles/Articles"
 import Banner from "./banner/Banner"
+import MapView from "./map/Map"
 
-export { Banner }
+export { Articles, Banner, MapView }

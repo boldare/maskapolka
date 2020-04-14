@@ -1,0 +1,14 @@
+.article-tile {
+  & > * {
+    @extend %margin-sm--v;
+  }
+
+  &__img {
+    height: 30rem;
+    border-radius: 1.5rem;
+  }
+
+  &__read-more {
+    color: var(--color-red);
+  }
+}
