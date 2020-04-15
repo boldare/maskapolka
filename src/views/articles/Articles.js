@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "./Articles.scss"
-import { BlogPostType } from "~/types"
-import { ArticleTile } from "@components"
+import { BlogPostType, YoutubeVideoType } from "~/types"
+import { ArticleTile, YoutubeTile } from "@components"
 import { Link } from "gatsby"
 
-const Articles = ({ posts }) => {
+const Articles = ({ posts, videos }) => {
   return (
     <section className="articles section" id="articles">
       <h2 className="heading-primary">Aktualności:</h2>
@@ -26,10 +26,22 @@ const Articles = ({ posts }) => {
           </li>
         ))}
       </ul>
+      <ul className="articles__list">
+        {videos.map(video => (
+          <li className="articles__list-item" key={video.url}>
+            <a href={video.link}>
+              <YoutubeTile url={video.link} title={video.title} />
+            </a>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
 
-Articles.propTypes = { posts: PropTypes.arrayOf(PropTypes.shape(BlogPostType)) }
+Articles.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.shape(BlogPostType)),
+  videos: PropTypes.arrayOf(PropTypes.shape(YoutubeVideoType)),
+}
 
 export default React.memo(Articles)

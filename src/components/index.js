@@ -8,6 +8,7 @@ import Image from "./Image/Image"
 import Layout from "./Layout/Layout"
 import MapFrame from "./MapFrame/MapFrame"
 import SEO from "./SEO/SEO"
+import YoutubeTile from "./YoutubeTile/YoutubeTile"
 
 export {
   ArticleTile,
@@ -20,4 +21,5 @@ export {
   Layout,
   MapFrame,
   SEO,
+  YoutubeTile,
 }

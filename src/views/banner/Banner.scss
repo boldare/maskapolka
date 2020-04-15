@@ -8,13 +8,13 @@ $scroll-down-height: 6rem;
       $scroll-down-height,
       max-content
     );
-  grid-gap: var(--space-sm);
   height: 100vh;
 
   grid-column: 1 / -1;
   grid-row: 1 / 2;
 
   @include breakpoint(md) {
+    grid-gap: var(--space-sm);
     grid-column: 2 / -1;
   }
 

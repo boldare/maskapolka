@@ -5,7 +5,7 @@ import "./Article.scss"
 import { ImageType, AuthorType } from "~/types"
 import { Image, Button } from "@components"
 
-const Article = ({ id, slug, title, body, img, authors }) => {
+const Article = ({ id, slug, title, body, img, authors, sources }) => {
   return (
     <section className="article section">
       <Image className="article__img" fluid={img.fluid} />
@@ -38,6 +38,9 @@ const Article = ({ id, slug, title, body, img, authors }) => {
           __html: body,
         }}
       />
+      {sources && (
+        <div className="article__sources">Źródła: {sources.join(", ")}</div>
+      )}
       <div id="comments">
         <DiscussionEmbed
           shortname="maskapolka"
@@ -58,6 +61,7 @@ Article.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   img: ImageType,
+  sources: PropTypes.arrayOf(PropTypes.string),
   authors: PropTypes.arrayOf(PropTypes.shape(AuthorType)),
 }
 

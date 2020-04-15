@@ -24,7 +24,14 @@ export const AuthorType = {
   email: PropTypes.string.isRequired,
 }
 
+export const YoutubeVideoType = {
+  createdAt: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+}
+
 export const BlogPostType = {
+  createdAt: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   heroImage: ImageType.isRequired,

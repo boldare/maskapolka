@@ -51,13 +51,14 @@ $col: 144px;
     position: fixed;
     display: flex;
     top: var(--space-sm);
-    left: 0;
+    left: var(--space-sm);
     width: $col;
     z-index: 4;
-    justify-content: center;
+    justify-content: flex-start;
 
     @include breakpoint(md) {
       top: var(--space-lg);
+      justify-content: center;
     }
 
     @include breakpoint(xl) {
@@ -66,7 +67,7 @@ $col: 144px;
 
     .icon {
       fill: var(--color-red);
-      height: 10rem;
+      height: var(--logo-height);
     }
   }
 

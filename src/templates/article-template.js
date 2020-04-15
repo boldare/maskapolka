@@ -28,6 +28,7 @@ const ArticleTemplate = ({
         img={heroImage}
         body={body}
         authors={authors}
+        sources={["first", "second"]}
       />
     </Layout>
   )

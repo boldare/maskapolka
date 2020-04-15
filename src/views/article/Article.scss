@@ -20,26 +20,36 @@
   }
 
   &__title,
-  &__content {
+  &__content,
+  &__sources {
     @include breakpoint(md) {
-      padding: 0 10%;
+      padding-left: 10%;
     }
   }
 
   &__description {
     @extend %padding-md--v;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
     border-bottom: 1px solid var(--color-light-grey);
 
     @include breakpoint(md) {
       margin-left: 10%;
+      flex-direction: row;
+      align-items: center;
     }
   }
 
   &__authors {
+    @extend %margin-md--bottom;
     display: flex;
+    flex-wrap: wrap;
+
+    @include breakpoint(md) {
+      margin-bottom: 0;
+    }
   }
 
   &__author {
@@ -54,12 +64,17 @@
     }
   }
 
+  &__sources {
+    @extend %margin-md--top;
+    font-style: italic;
+  }
+
   &__author-img {
     border-radius: 50%;
     align-self: stretch;
   }
 
-  &__content {
-    @extend %margin-xl--bottom;
+  #comments {
+    @extend %margin-lg--top;
   }
 }

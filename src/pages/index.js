@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { SEO, Layout } from "@components"
 import { Banner, Articles, MapView, About } from "@views"
-import { BlogPostType, MarkdownType } from "~/types"
+import { BlogPostType, MarkdownType, YoutubeVideoType } from "~/types"
 
 const IndexPage = ({
   data: {
@@ -22,6 +22,7 @@ const IndexPage = ({
       facebookLink,
     },
     postItems: { nodes: posts },
+    youtubeVideos: { nodes: videos },
   },
 }) => {
   return (
@@ -35,7 +36,7 @@ const IndexPage = ({
 
       <About description={about} />
       <MapView howToFind={howToFind} howToAdd={howToAdd} />
-      <Articles posts={posts} />
+      <Articles posts={posts} videos={videos} />
     </Layout>
   )
 }
@@ -65,11 +66,12 @@ export const pageQuery = graphql`
 
     postItems: allContentfulBlogPost(
       filter: { content: { childMarkdownRemark: { excerpt: { ne: null } } } }
+      sort: { fields: createdAt, order: DESC }
     ) {
       nodes {
         slug
         title
-        createdAt(formatString: "DD/MM/YYYY")
+        createdAt
         content {
           childMarkdownRemark {
             excerpt(pruneLength: 150)
@@ -80,6 +82,15 @@ export const pageQuery = graphql`
             ...GatsbyContentfulFluid_withWebp
           }
         }
+      }
+    }
+    youtubeVideos: allContentfulYoutubeVideo(
+      sort: { fields: createdAt, order: DESC }
+    ) {
+      nodes {
+        createdAt
+        title
+        link
       }
     }
   }
@@ -96,6 +107,9 @@ IndexPage.propTypes = {
     }),
   }),
   postItems: PropTypes.shape({ nodes: PropTypes.arrayOf(BlogPostType) }),
+  youtubeVideos: PropTypes.shape({
+    nodes: PropTypes.arrayOf(YoutubeVideoType),
+  }),
 }
 
 export default IndexPage

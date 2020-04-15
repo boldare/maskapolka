@@ -1,0 +1,41 @@
+.youtube-tile {
+  border-radius: 1rem;
+  background-color: var(--color-light-grey);
+  overflow: hidden;
+
+  &:hover &__title {
+    text-decoration: underline;
+  }
+
+  &:hover &__img {
+    transform: scale(1.05);
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    transition: all 0.2s;
+
+    &-wrapper {
+      overflow: hidden;
+    }
+  }
+
+  &__indicator,
+  &__title {
+    @extend %margin-sm;
+    transition: all 0.2s;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__indicator {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: var(--color-red);
+    margin-bottom: 0;
+  }
+}
