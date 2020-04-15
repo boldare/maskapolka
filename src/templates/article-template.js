@@ -15,12 +15,20 @@ const ArticleTemplate = ({
       content: {
         childMarkdownRemark: { html: body },
       },
+      authors,
     },
   },
 }) => {
   return (
     <Layout>
-      <Article id={id} slug={slug} title={title} img={heroImage} body={body} />
+      <Article
+        id={id}
+        slug={slug}
+        title={title}
+        img={heroImage}
+        body={body}
+        authors={authors}
+      />
     </Layout>
   )
 }
@@ -44,6 +52,15 @@ export const pageQuery = graphql`
       heroImage {
         fluid {
           ...GatsbyContentfulFluid_withWebp
+        }
+      }
+      authors {
+        name
+        email
+        image {
+          fluid {
+            ...GatsbyContentfulFluid_withWebp
+          }
         }
       }
     }

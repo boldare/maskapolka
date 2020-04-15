@@ -26,6 +26,39 @@
     }
   }
 
+  &__description {
+    @extend %padding-md--v;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-light-grey);
+
+    @include breakpoint(md) {
+      margin-left: 10%;
+    }
+  }
+
+  &__authors {
+    display: flex;
+  }
+
+  &__author {
+    display: grid;
+    grid-template-columns: 6rem max-content;
+    grid-template-rows: 6rem;
+    align-items: center;
+    grid-gap: var(--space-sm);
+
+    &:not(:last-child) {
+      @extend %margin-md--right;
+    }
+  }
+
+  &__author-img {
+    border-radius: 50%;
+    align-self: stretch;
+  }
+
   &__content {
     @extend %margin-xl--bottom;
   }

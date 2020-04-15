@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { SEO, Layout } from "@components"
 import { Banner, Articles, MapView, About } from "@views"
-import { BlogPostType } from "~/types"
+import { BlogPostType, MarkdownType } from "~/types"
 
 const IndexPage = ({
   data: {
@@ -19,6 +19,7 @@ const IndexPage = ({
       aboutAction: {
         childMarkdownRemark: { html: about },
       },
+      facebookLink,
     },
     postItems: { nodes: posts },
   },
@@ -26,7 +27,11 @@ const IndexPage = ({
   return (
     <Layout>
       <SEO title="Home" />
-      <Banner heading={heading} description={description} />
+      <Banner
+        heading={heading}
+        description={description}
+        facebookLink={facebookLink}
+      />
 
       <About description={about} />
       <MapView howToFind={howToFind} howToAdd={howToAdd} />
@@ -55,6 +60,7 @@ export const pageQuery = graphql`
           html
         }
       }
+      facebookLink
     }
 
     postItems: allContentfulBlogPost(
@@ -66,7 +72,7 @@ export const pageQuery = graphql`
         createdAt(formatString: "DD/MM/YYYY")
         content {
           childMarkdownRemark {
-            excerpt
+            excerpt(pruneLength: 150)
           }
         }
         heroImage {
@@ -82,8 +88,11 @@ export const pageQuery = graphql`
 IndexPage.propTypes = {
   data: PropTypes.shape({
     settings: PropTypes.shape({
-      heading: PropTypes.string,
-      description: PropTypes.string,
+      heading: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      howToFindPlaces: MarkdownType.isRequired,
+      howToAddPlace: MarkdownType.isRequired,
+      facebookLink: PropTypes.string.isRequired,
     }),
   }),
   postItems: PropTypes.shape({ nodes: PropTypes.arrayOf(BlogPostType) }),

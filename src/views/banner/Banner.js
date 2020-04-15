@@ -4,7 +4,7 @@ import "./Banner.scss"
 import { FacebookButton, Button, Icon } from "@components"
 import { Link, navigate } from "gatsby"
 
-const Banner = ({ heading, description }) => {
+const Banner = ({ heading, description, facebookLink }) => {
   return (
     <>
       <div className="banner__bg" />
@@ -41,7 +41,7 @@ const Banner = ({ heading, description }) => {
         <FacebookButton
           className="banner__fb-btn"
           text="Dołącz do akcji"
-          link="https://www.facebook.com/maskapolkapl/"
+          link={facebookLink}
         />
       </section>
     </>
@@ -49,8 +49,9 @@ const Banner = ({ heading, description }) => {
 }
 
 Banner.propTypes = {
-  heading: PropTypes.string,
-  description: PropTypes.string,
+  heading: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  facebookLink: PropTypes.string.isRequired,
 }
 
 export default React.memo(Banner)

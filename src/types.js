@@ -20,9 +20,8 @@ export const MarkdownType = PropTypes.shape({
 
 export const AuthorType = {
   name: PropTypes.string.isRequired,
-  shortBio: PropTypes.string.isRequired,
-  email: PropTypes.string,
   image: ImageType.isRequired,
+  email: PropTypes.string.isRequired,
 }
 
 export const BlogPostType = {
@@ -31,5 +30,5 @@ export const BlogPostType = {
   heroImage: ImageType.isRequired,
   description: MarkdownType,
   content: MarkdownType,
-  source: PropTypes.string,
+  sources: PropTypes.arrayOf(PropTypes.string),
 }
