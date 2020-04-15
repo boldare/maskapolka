@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { SEO, Layout } from "@components"
 import { Press } from "@views"
+import { graphql } from "gatsby"
 
 const PressPage = ({
   data: {
