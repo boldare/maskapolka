@@ -8,7 +8,6 @@ const Banner = ({ heading, description }) => {
   return (
     <>
       <div className="banner__bg" />
-      <div className="banner__scroll-down-bg" />
       <div className="banner__shape-wrapper">
         <Icon className="banner__shape" type="bgShape" />
       </div>

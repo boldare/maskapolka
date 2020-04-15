@@ -21,8 +21,16 @@
   --space-xs: 1rem;
   --space-sm: 1.5rem;
   --space-md: 2.5rem;
-  --space-lg: 5rem;
-  --space-xl: 12rem;
+  --space-lg: 3.5rem;
+  --space-xl: 8rem;
+
+  @include breakpoint(md) {
+    --space-lg: 5rem;
+  }
+
+  @include breakpoint(lg) {
+    --space-xl: 12rem;
+  }
 }
 
 body {
@@ -80,4 +88,10 @@ button {
 
 .section {
   @extend %padding-lg--top;
+  @extend %padding-sm--h;
+
+  @include breakpoint(md) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

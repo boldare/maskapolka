@@ -1,15 +1,26 @@
 .footer {
-  @extend %padding-xl--bottom;
+  @extend %padding-sm;
   position: relative;
-  grid-column: 7 / 10;
-  grid-row: 6 / 7;
+  grid-row: 7 / 8;
+  grid-column: 1 / -1;
   align-self: end;
-  justify-self: end;
   line-height: 2;
+  background-color: var(--color-bg);
+
+  @include breakpoint(md) {
+    padding-bottom: var(--space-xl);
+    justify-self: end;
+    grid-row: 6 / 7;
+    grid-column: 7 / 10;
+    background-color: transparent;
+  }
 
   .button {
     @extend %margin-lg--bottom;
-    margin-left: auto;
+
+    @include breakpoint(md) {
+      margin-left: auto;
+    }
   }
 
   &__icon {
@@ -27,18 +38,26 @@ $col: 144px;
 
 .main {
   display: grid;
-  grid-template-columns:
-    minmax($col, 1fr) repeat(8, minmax(min-content, $col))
-    minmax($col, 1fr);
+  grid-template-columns: 1fr 1fr;
+
+  @include breakpoint(md) {
+    grid-template-columns:
+      minmax($col, 1fr) repeat(8, minmax(min-content, $col))
+      minmax($col, 1fr);
+  }
 
   &__logo {
     position: fixed;
     display: flex;
-    top: var(--space-lg);
+    top: var(--space-sm);
     left: 0;
     width: $col;
     z-index: 4;
     justify-content: center;
+
+    @include breakpoint(md) {
+      top: var(--space-lg);
+    }
 
     @include breakpoint(xl) {
       left: calc((100vw - 8 * #{$col}) / 2 - #{$col});
@@ -58,14 +77,18 @@ $col: 144px;
 
   &__logo-text {
     @extend %margin-lg--top;
-    display: flex;
+    display: none;
     height: var(--logo-height);
     flex-direction: column;
     justify-content: center;
     z-index: 4;
 
-    grid-row: 1 / 2;
-    grid-column: 2 / -1;
+    @include breakpoint(md) {
+      display: flex;
+      grid-row: 1 / 2;
+
+      grid-column: 2 / -1;
+    }
 
     &,
     &:hover {
@@ -78,12 +101,17 @@ $col: 144px;
     @extend %padding-sm--left;
     position: fixed;
     display: flex;
-    right: $col;
-    top: var(--space-lg);
-    height: var(--logo-height);
+    top: var(--space-md);
+    right: var(--space-md);
     align-items: center;
-    transform: translateX(100%);
     z-index: 5;
+
+    @include breakpoint(md) {
+      right: $col;
+      top: var(--space-lg);
+      height: var(--logo-height);
+      transform: translateX(100%);
+    }
 
     @include breakpoint(xl) {
       right: calc((100vw - 8 * #{$col}) / 2);
@@ -92,6 +120,7 @@ $col: 144px;
 }
 
 .nav {
+  @extend %padding-sm--h;
   position: fixed;
   display: flex;
   width: 100%;
@@ -103,7 +132,12 @@ $col: 144px;
   overflow: hidden;
 
   &__items {
-    width: calc(100vw - 2 * #{$col});
+    width: 100%;
+
+    @include breakpoint(md) {
+      width: calc(100vw - 2 * #{$col});
+      padding: 0;
+    }
 
     @include breakpoint(xl) {
       width: 8 * $col;

@@ -1,6 +1,10 @@
 .articles {
-  grid-column: 2 / 10;
+  grid-column: 1 / -1;
   grid-row: 5 / 6;
+
+  @include breakpoint(md) {
+    grid-column: 2 / 10;
+  }
 
   &__paragraph {
     @extend %margin-lg--v;
@@ -8,7 +12,11 @@
 
   &__list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: var(--space-md);
+
+    @include breakpoint(md) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
