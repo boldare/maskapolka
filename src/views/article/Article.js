@@ -7,7 +7,7 @@ import { Image } from "@components"
 
 const Article = ({ id, slug, title, body, img }) => {
   return (
-    <section className="article__comments section">
+    <section className="article section">
       <Image className="article__img" fluid={img.fluid} />
       <h1 className="article__title heading-primary">{title}</h1>
       <div
