@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "./FacebookButton.scss"
-import Icon from "../Icon/Icon"
-import { Button } from "@components"
+import { Button, Icon } from "@components"
 import { classnames } from "~/utils"
 
 const FacebookButton = ({ className, link, text }) => {

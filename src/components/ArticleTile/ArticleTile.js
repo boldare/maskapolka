@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import "./ArticleTile.scss"
 import { ImageType } from "~/types"
-import Image from "../Image/Image"
+import { Image } from "@components"
 
 const ArticleTile = ({ title, excerpt, image }) => {
   return (

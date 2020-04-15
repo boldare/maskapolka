@@ -28,9 +28,9 @@ const IndexPage = ({
       <SEO title="Home" />
       <Banner heading={heading} description={description} />
 
-      <Articles posts={posts} />
-      <MapView howToFind={howToFind} howToAdd={howToAdd} />
       <About description={about} />
+      <MapView howToFind={howToFind} howToAdd={howToAdd} />
+      <Articles posts={posts} />
     </Layout>
   )
 }

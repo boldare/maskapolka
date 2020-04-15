@@ -32,7 +32,7 @@ const Banner = ({ heading, description }) => {
           </Button>
         </div>
         <div className="banner__scroll-down">
-          <Link to="/#articles">
+          <Link to="/#about">
             <Icon className="banner__scroll-down-icon" type="arrow" round />
             <div>Zjedź w dół i dowiedz się więcej o akcji Maska Polka</div>
           </Link>

@@ -5,6 +5,7 @@
   width: 100%;
   text-align: left;
   font-size: inherit;
+  background-color: transparent;
 
   &__title {
     display: flex;
@@ -12,8 +13,13 @@
     max-width: unset;
   }
 
+  &--open &__icon {
+    transform: rotate(180deg);
+  }
+
   &__icon {
     height: 3rem;
+    transition: all 0.2s;
   }
 
   &__content {

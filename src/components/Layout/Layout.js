@@ -1,9 +1,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import "./Layout.scss"
-import Button from "../Button/Button"
-import Icon from "../Icon/Icon"
-import Hamburger from "../Hamburger/Hamburger"
+import { Button, Hamburger, Icon } from "@components"
 import { Link } from "gatsby"
 
 const items = [
@@ -12,12 +10,12 @@ const items = [
     link: "/#about",
   },
   {
-    label: "Prawidłowe uywanie maski",
-    link: "#",
+    label: "Prawidłowe używanie maski",
+    link: "/#about",
   },
   {
     label: "Instrukcja dodawania punktów",
-    link: "#",
+    link: "/#map",
   },
   {
     label: "Aktualności",

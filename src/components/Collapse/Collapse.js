@@ -1,11 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "./Collapse.scss"
-import Icon from "../Icon/Icon"
+import { Icon } from "@components"
+import { classnames } from "~/utils"
 
 const Collapse = ({ title, open, children, onClick }) => {
   return (
-    <button className="collapse" onClick={onClick}>
+    <button
+      className={classnames("collapse", { "collapse--open": open })}
+      onClick={onClick}
+    >
       <div className="collapse__title heading-secondary">
         {title}
         <Icon className="collapse__icon" type="arrow" round shadow />
