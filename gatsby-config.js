@@ -5,6 +5,7 @@ module.exports = {
     title: `Maska Polka`,
     description: `Łączymy osoby szyjące maseczki z tymi, którzy ich potrzebują.`,
     author: `@jagoral`,
+    siteUrl: process.env.HOST || "https://maskapolka.netlify.com/",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
