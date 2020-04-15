@@ -55,22 +55,24 @@ $scroll-down-height: 6rem;
     @include breakpoint(md) {
       flex-direction: row;
     }
+  }
 
-    .button:first-of-type {
-      @extend %margin-md--right;
-      @extend %margin-md--bottom;
+  &__find-btn {
+    @extend %margin-md--right;
+    @extend %margin-md--bottom;
 
-      @include breakpoint(md) {
-        margin-bottom: 0;
-      }
-
-      .icon {
-        background-color: white;
-        fill: var(--color-red);
-      }
+    @include breakpoint(md) {
+      margin-bottom: 0;
     }
 
-    .button:nth-of-type(2) .icon {
+    .icon {
+      background-color: white;
+      fill: var(--color-red);
+    }
+  }
+
+  &__add-btn {
+    .icon {
       background-color: var(--color-bg);
       fill: black;
     }

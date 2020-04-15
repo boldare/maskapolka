@@ -18,6 +18,7 @@ const Banner = ({ heading, description, facebookLink }) => {
         </div>
         <div className="banner__buttons">
           <Button
+            className="banner__find-btn"
             color="red"
             link="https://www.mapotic.com/maskapolka-1"
             onClick={() => navigate("/#map")}
@@ -25,10 +26,20 @@ const Banner = ({ heading, description, facebookLink }) => {
             <Icon className="banner__icon" type="pin" round />
             Znajdź punkt
           </Button>
-          <Button color="white" link="https://www.mapotic.com/maskapolka-1">
-            <Icon className="banner__icon" type="plus" round />
-            Dodaj punkt
-          </Button>
+          <a
+            href="https://www.mapotic.com/maskapolka-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              className="banner__add-btn"
+              color="white"
+              link="https://www.mapotic.com/maskapolka-1"
+            >
+              <Icon className="banner__icon" type="plus" round />
+              Dodaj punkt
+            </Button>
+          </a>
         </div>
         <div className="banner__scroll-down">
           <Link to="/#about">

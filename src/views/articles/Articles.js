@@ -29,7 +29,7 @@ const Articles = ({ posts, videos }) => {
       <ul className="articles__list">
         {videos.map(video => (
           <li className="articles__list-item" key={video.url}>
-            <a href={video.link}>
+            <a href={video.link} target="_blank" rel="noopener noreferrer">
               <YoutubeTile url={video.link} title={video.title} />
             </a>
           </li>
