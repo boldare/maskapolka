@@ -2,8 +2,13 @@
   &__pack {
     @extend %margin-xl--top;
     @extend %padding-lg--bottom;
+    padding-top: 0;
     grid-row: 1 / 2;
-    grid-column: 3 / 9;
+    grid-column: 1 / -1;
+
+    @include breakpoint(md) {
+      grid-column: 3 / 9;
+    }
   }
 
   &__subheading {
@@ -21,12 +26,18 @@
   &__file {
     @extend %padding-md--v;
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
   }
 
   &__description {
-    @extend %margin-sm--top;
+    @extend %margin-sm--v;
     display: inline-block;
   }
 
@@ -39,9 +50,17 @@
   }
 
   &__heading-secondary {
+    @extend %padding-sm--h;
     max-width: unset;
 
+    grid-column: 1 / -1;
     grid-row: 2 / 3;
-    grid-column: 3 / 9;
+
+    @include breakpoint(md) {
+      padding-left: 0;
+      padding-right: 0;
+
+      grid-column: 3 / 9;
+    }
   }
 }
