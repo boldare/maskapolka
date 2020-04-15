@@ -16,7 +16,7 @@ const Articles = ({ posts, videos }) => {
       <ul className="articles__list">
         {posts.map(post => (
           <li className="articles__list-item" key={post.slug}>
-            <Link to={`/blog/${post.slug}`}>
+            <Link to={`/blog/${post.slug}`} aria-label={post.title}>
               <ArticleTile
                 title={post.title}
                 excerpt={post.content.childMarkdownRemark.excerpt}
@@ -29,7 +29,12 @@ const Articles = ({ posts, videos }) => {
       <ul className="articles__list">
         {videos.map(video => (
           <li className="articles__list-item" key={video.url}>
-            <a href={video.link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={video.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={video.title}
+            >
               <YoutubeTile url={video.link} title={video.title} />
             </a>
           </li>

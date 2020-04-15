@@ -7,7 +7,11 @@ const YoutubeTile = ({ url, title }) => {
   return (
     <article className="youtube-tile">
       <div className="youtube-tile__img-wrapper">
-        <img className="youtube-tile__img" src={getYoutubeThumbnailUrl(url)} />
+        <img
+          className="youtube-tile__img"
+          src={getYoutubeThumbnailUrl(url)}
+          alt={title}
+        />
       </div>
       <span className="youtube-tile__indicator">youtube.com</span>
       <h1 className="youtube-tile__title heading-secondary">{title}</h1>

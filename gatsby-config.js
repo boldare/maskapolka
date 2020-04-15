@@ -50,5 +50,11 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
   ],
 }

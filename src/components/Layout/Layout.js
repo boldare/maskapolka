@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
 
   return (
     <main className="main">
-      <Link className="main__logo" to="/">
+      <Link className="main__logo" to="/" aria-label="Home page">
         <Icon type="logo" />
       </Link>
       <div className="main__hamburger">

@@ -10,6 +10,7 @@ const Hamburger = ({ className, onClick, open }) => {
         "hamburger--active": open,
       })}
       onClick={onClick}
+      aria-label="menu-button"
     >
       <span></span>
       <span></span>
