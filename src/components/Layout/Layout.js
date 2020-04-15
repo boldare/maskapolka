@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import "./Layout.scss"
 import { Button, Hamburger, Icon } from "@components"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 const items = [
   {
@@ -33,12 +33,19 @@ const items = [
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const data = useStaticQuery(graphql`
+    query LayoutQuery {
+      settings: contentfulUstawieniaSingle {
+        contactMail
+      }
+    }
+  `)
 
   return (
     <main className="main">
-      <div className="main__logo">
+      <Link className="main__logo" to="/">
         <Icon type="logo" />
-      </div>
+      </Link>
       <div className="main__hamburger">
         <Hamburger
           open={isMenuOpen}
@@ -65,7 +72,9 @@ const Layout = ({ children }) => {
       )}
       {children}
       <footer className="footer" id="footer">
-        <Button>Skontaktuj się z nami</Button>
+        <a href={`mailto:${data.settings.contactMail}`}>
+          <Button>Skontaktuj się z nami</Button>
+        </a>
         <div>
           Strona zaprojektowana dzięki wsparciu firmy: Boldare
           <br />

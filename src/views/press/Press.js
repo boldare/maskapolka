@@ -1,8 +1,9 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { Button } from "@components"
 import "./Press.scss"
 
-const Press = props => {
+const Press = ({ packUrl }) => {
   return (
     <>
       <div className="press__bg"></div>
@@ -24,7 +25,9 @@ const Press = props => {
               opisami oraz plikami wizualnymi.
             </p>
           </div>
-          <Button color="white">Pobierz Press pack.zip</Button>
+          <a href={packUrl} target="_blank" rel="noopener noreferrer">
+            <Button color="white">Pobierz Press pack.zip</Button>
+          </a>
         </div>
       </section>
       <h2 class="heading-primary press__heading-secondary">
@@ -33,6 +36,10 @@ const Press = props => {
       </h2>
     </>
   )
+}
+
+Press.propTypes = {
+  packUrl: PropTypes.string.isRequired,
 }
 
 export default React.memo(Press)

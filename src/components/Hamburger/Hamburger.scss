@@ -7,6 +7,16 @@ $hamburger-height: 4px;
   height: 7 * $hamburger-height;
   background-color: unset;
 
+  &:hover span {
+    &:first-child {
+      transform: translateY(-3px);
+    }
+
+    &:last-child {
+      transform: translateY(3px);
+    }
+  }
+
   span {
     display: block;
     position: absolute;
@@ -17,7 +27,7 @@ $hamburger-height: 4px;
     background-color: black;
     transition: transform 0.2s ease-out;
 
-    &:nth-child(1) {
+    &:first-child {
       top: 0;
     }
 
@@ -33,7 +43,7 @@ $hamburger-height: 4px;
 
   &--active {
     span {
-      &:nth-child(1),
+      &:first-child,
       &:last-child {
         width: 0;
       }

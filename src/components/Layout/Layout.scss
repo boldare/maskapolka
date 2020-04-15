@@ -92,8 +92,8 @@ $col: 144px;
     }
 
     &,
-    &:hover {
-      color: var(--color-red);
+    &:link,
+    &:visited {
       color: var(--color-red);
     }
   }
