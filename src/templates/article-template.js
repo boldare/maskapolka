@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { BlogPostType } from "~/types"
-import { Layout } from "@components"
+import { Layout, SEO } from "@components"
 import { Article } from "@views"
 
 const ArticleTemplate = ({
@@ -21,6 +21,7 @@ const ArticleTemplate = ({
 }) => {
   return (
     <Layout>
+      <SEO title={title} />
       <Article
         id={id}
         slug={slug}
