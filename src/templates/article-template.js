@@ -11,6 +11,7 @@ const ArticleTemplate = ({
       slug,
       title,
       contentful_id: id,
+      description,
       heroImage,
       content: {
         childMarkdownRemark: { html: body },
@@ -21,7 +22,7 @@ const ArticleTemplate = ({
 }) => {
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description={description} />
       <Article
         id={id}
         slug={slug}
@@ -46,6 +47,7 @@ export const pageQuery = graphql`
       slug
       title
       createdAt(formatString: "DD/MM/YYYY")
+      description
       content {
         childMarkdownRemark {
           html

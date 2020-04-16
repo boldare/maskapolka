@@ -17,6 +17,8 @@ function SEO({ description, lang, meta, title }) {
       cover: {
         file: { url },
       },
+      metaTitle: defaultTitle,
+      metaDescription: defaultDescription,
     },
   } = useStaticQuery(
     graphql`
@@ -24,8 +26,6 @@ function SEO({ description, lang, meta, title }) {
         site {
           siteMetadata {
             title
-            description
-            author
           }
         }
         settings: contentfulUstawieniaSingle {
@@ -34,6 +34,8 @@ function SEO({ description, lang, meta, title }) {
               url
             }
           }
+          metaTitle
+          metaDescription
         }
       }
     `
@@ -41,14 +43,15 @@ function SEO({ description, lang, meta, title }) {
 
   const coverUrl = `https:${url}`
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || defaultDescription
+  const metaTitle = title || defaultTitle
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
+      title={metaTitle}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -61,7 +64,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -80,12 +83,8 @@ function SEO({ description, lang, meta, title }) {
           content: `summary`,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
@@ -104,13 +103,14 @@ SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
+  title: null,
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 }
 
 export default SEO
