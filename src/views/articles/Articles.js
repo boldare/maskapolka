@@ -25,8 +25,6 @@ const Articles = ({ posts, videos }) => {
             </Link>
           </li>
         ))}
-      </ul>
-      <ul className="articles__list">
         {videos.map(video => (
           <li className="articles__list-item" key={video.url}>
             <a
