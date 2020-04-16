@@ -37,5 +37,5 @@ export const BlogPostType = {
   heroImage: ImageType.isRequired,
   description: MarkdownType,
   content: MarkdownType,
-  sources: PropTypes.arrayOf(PropTypes.string),
+  postSources: PropTypes.arrayOf(PropTypes.string),
 }

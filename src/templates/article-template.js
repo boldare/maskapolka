@@ -17,6 +17,7 @@ const ArticleTemplate = ({
         childMarkdownRemark: { html: body },
       },
       authors,
+      postSources,
     },
   },
 }) => {
@@ -35,7 +36,7 @@ const ArticleTemplate = ({
         img={heroImage}
         body={body}
         authors={authors}
-        sources={["first", "second"]}
+        sources={postSources}
       />
     </Layout>
   )
@@ -66,6 +67,7 @@ export const pageQuery = graphql`
           url
         }
       }
+      postSources
       authors {
         name
         email
