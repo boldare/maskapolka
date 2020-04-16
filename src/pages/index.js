@@ -78,7 +78,7 @@ export const pageQuery = graphql`
           }
         }
         heroImage {
-          fluid {
+          fluid(maxWidth: 600) {
             ...GatsbyContentfulFluid_withWebp
           }
         }
