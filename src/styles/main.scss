@@ -101,7 +101,6 @@ button {
 
 .inner-html {
   max-width: 70rem;
-  color: var(--color-light-black);
 
   h1 {
     font-size: 3rem;
@@ -160,7 +159,8 @@ button {
   }
 
   u {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid   color: var(--color-light-black);
+    ;
   }
 
   a {

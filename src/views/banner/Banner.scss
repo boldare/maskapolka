@@ -18,6 +18,10 @@ $scroll-down-height: 6rem;
     grid-column: 2 / -1;
   }
 
+  &__paragraph {
+    font-size: 2.4rem;
+  }
+
   &__bg {
     background-color: var(--color-bg);
     width: 100%;
@@ -74,7 +78,7 @@ $scroll-down-height: 6rem;
   &__add-btn {
     .icon {
       background-color: var(--color-bg);
-      fill: black;
+      fill: var(--color-light-black);
     }
   }
 

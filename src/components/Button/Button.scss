@@ -27,7 +27,7 @@
   &--white,
   &--white:hover,
   &--white:link {
-    color: black;
+    color: var(--color-light-black);
     background-color: white;
   }
 
