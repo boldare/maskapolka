@@ -77,4 +77,9 @@
   #comments {
     @extend %margin-lg--top;
   }
+
+  .inner-html p:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+  }
 }
