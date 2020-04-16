@@ -18,6 +18,7 @@
 
     @include breakpoint(md) {
       grid-template-columns: 1fr 1fr;
+      grid-gap: var(--space-lg);
     }
   }
 
