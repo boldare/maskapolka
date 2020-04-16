@@ -34,7 +34,7 @@ const Banner = ({ heading, description, facebookLink }) => {
             <Button
               className="banner__add-btn"
               color="white"
-              link="https://www.mapotic.com/maskapolka-1"
+              link="https://mapa.maskapolka.pl/"
             >
               <Icon className="banner__icon" type="plus" round />
               Dodaj punkt
