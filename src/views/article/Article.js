@@ -13,14 +13,20 @@ const Article = ({ id, slug, title, body, img, authors, sources }) => {
         <ul className="article__authors">
           {authors.map(author => (
             <li className="article__author">
-              <Image
-                className="article__author-img"
-                fluid={author.image.fluid}
-              />
+              {author.image && (
+                <Image
+                  className="article__author-img"
+                  fluid={author.image.fluid}
+                />
+              )}
               <div>
                 {author.name}
-                <br />
-                {author.email}
+                {author.email && (
+                  <>
+                    <br />
+                    {author.email}
+                  </>
+                )}
               </div>
             </li>
           ))}
