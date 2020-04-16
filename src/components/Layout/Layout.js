@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
       setIsLogoMinimized(window.innerWidth < 600 && window.scrollY > 100)
     }
     document.addEventListener("scroll", scrollHandler)
-    return () => document.removeEventListener(scrollHandler)
+    return () => document.removeEventListener("scroll", scrollHandler)
   }, [])
 
   return (
