@@ -131,11 +131,18 @@ button {
     background-color: var(--color-light-grey);
   }
 
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
   ul,
   ol {
     @extend %margin-md--v;
     margin-left: 1em;
-    list-style: disc;
 
     li {
       @extend %padding-md--left;
