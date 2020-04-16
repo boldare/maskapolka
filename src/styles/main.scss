@@ -150,13 +150,17 @@ button {
     }
   }
 
+  u {
+    border-bottom: 3px solid black;
+  }
+
   a {
     transition: all 0.2s;
-    color: var(--color-red);
     font-weight: bold;
-    border-bottom: 2px solid var(--color-red);
+    border-bottom: 3px solid var(--color-red);
 
     &:hover {
+      color: var(--color-red);
       opacity: 0.8;
     }
   }
