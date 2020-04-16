@@ -93,3 +93,70 @@ button {
     padding-right: 0;
   }
 }
+
+.inner-html {
+  max-width: 70rem;
+
+  h1 {
+    font-size: 3rem;
+
+    @include breakpoint(md) {
+      font-size: 4rem;
+    }
+  }
+
+  h2 {
+    font-size: 2rem;
+
+    @include breakpoint(md) {
+      font-size: 2.5rem;
+    }
+  }
+
+  h1,
+  h2 {
+    @extend %padding-sm--v;
+    @extend %margin-sm--v;
+    line-height: 1.2;
+    border-bottom: 1px solid var(--color-grey);
+  }
+
+  p,
+  h3 {
+    @extend %margin-sm--v;
+    line-height: 1.8;
+  }
+
+  strong {
+    background-color: var(--color-light-grey);
+  }
+
+  ul,
+  ol {
+    @extend %margin-md--v;
+    margin-left: 1em;
+    list-style: disc;
+
+    li {
+      @extend %padding-md--left;
+      @extend %margin-sm--v;
+    }
+  }
+
+  a {
+    transition: all 0.2s;
+    color: var(--color-red);
+    font-weight: bold;
+    border-bottom: 2px solid var(--color-red);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  img {
+    @extend %margin-md--v;
+    display: block;
+    width: 100%;
+  }
+}

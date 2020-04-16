@@ -16,6 +16,7 @@ const MapView = ({ howToFind, howToAdd }) => {
           onClick={() => setIsHowToFindOpen(!isHowToFindOpen)}
         >
           <div
+            className="inner-html"
             dangerouslySetInnerHTML={{
               __html: howToFind,
             }}
@@ -27,6 +28,7 @@ const MapView = ({ howToFind, howToAdd }) => {
           onClick={() => setIsHowToAddOpen(!isHowToAddOpen)}
         >
           <div
+            className="inner-html"
             dangerouslySetInnerHTML={{
               __html: howToAdd,
             }}

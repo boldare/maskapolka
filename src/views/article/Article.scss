@@ -23,7 +23,7 @@
   &__content,
   &__sources {
     @include breakpoint(md) {
-      padding-left: 10%;
+      margin-left: 10%;
     }
   }
 
@@ -33,7 +33,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 1px solid var(--color-light-grey);
+    border-bottom: 1px solid var(--color-grey);
 
     @include breakpoint(md) {
       margin-left: 10%;

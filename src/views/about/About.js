@@ -25,7 +25,7 @@ const About = ({ description }) => {
         Maska Polka to ogólnopolska oddolna akcja prospołeczna
       </h2>
       <div
-        className="about__paragraph"
+        className="about__paragraph inner-html"
         dangerouslySetInnerHTML={{
           __html: description,
         }}

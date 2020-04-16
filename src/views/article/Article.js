@@ -33,7 +33,7 @@ const Article = ({ id, slug, title, body, img, authors, sources }) => {
       </div>
       <h1 className="article__title heading-primary">{title}</h1>
       <div
-        className="article__content"
+        className="article__content inner-html"
         dangerouslySetInnerHTML={{
           __html: body,
         }}
