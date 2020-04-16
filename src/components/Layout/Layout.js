@@ -12,7 +12,7 @@ const items = [
   },
   {
     label: "Prawidłowe używanie maski",
-    link: "/#about",
+    link: "/#how-to",
   },
   {
     label: "Instrukcja dodawania punktów",

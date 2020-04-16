@@ -30,7 +30,7 @@ const About = ({ description }) => {
           __html: description,
         }}
       ></div>
-      <p className="about__paragraph heading-secondary">
+      <p className="about__paragraph heading-secondary" id="how-to">
         Jak poprawnie używać maseczki
       </p>
       <ol className="about__instruction">
