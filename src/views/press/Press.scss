@@ -1,13 +1,12 @@
 .press {
   &__pack {
     @extend %margin-xl--top;
-    @extend %padding-lg--bottom;
-    padding-top: 0;
+    @extend %padding-lg--v;
     grid-row: 1 / 2;
     grid-column: 1 / -1;
 
     @include breakpoint(md) {
-      grid-column: 3 / 9;
+      grid-column: 2 / 10;
     }
   }
 
@@ -60,7 +59,7 @@
       padding-left: 0;
       padding-right: 0;
 
-      grid-column: 3 / 9;
+      grid-column: 2 / 10;
     }
   }
 }

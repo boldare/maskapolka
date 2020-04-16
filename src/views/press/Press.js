@@ -31,7 +31,8 @@ const Press = ({ packUrl }) => {
         </div>
       </section>
       <h2 class="heading-primary press__heading-secondary">
-        Dołącz do akcji prospołecznej i odpowiedzialnie, razem w zdrowiu
+        Dołącz do akcji prospołecznej i odpowiedzialnie,{" "}
+        <span className="highlight">razem w zdrowiu </span>
         przejdźmy sytuację związaną z pandemią.
       </h2>
     </>
