@@ -20,22 +20,17 @@ const Banner = ({ heading, description, facebookLink }) => {
           <Button
             className="banner__find-btn"
             color="red"
-            link="https://www.mapotic.com/maskapolka-1"
             onClick={() => navigate("/#map")}
           >
             <Icon className="banner__icon" type="pin" round />
             Znajdź punkt
           </Button>
           <a
-            href="https://www.mapotic.com/maskapolka-1"
+            href="https://mapa.maskapolka.pl/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button
-              className="banner__add-btn"
-              color="white"
-              link="https://mapa.maskapolka.pl/"
-            >
+            <Button className="banner__add-btn" color="white">
               <Icon className="banner__icon" type="plus" round />
               Dodaj punkt
             </Button>
