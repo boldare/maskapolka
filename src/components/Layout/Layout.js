@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import "./Layout.scss"
 import { Button, Hamburger, Icon } from "@components"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import { classnames } from "~/utils"
 
 const items = [
   {
@@ -33,6 +34,7 @@ const items = [
 
 const Layout = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isLogoMinimized, setIsLogoMinimized] = useState(false)
   const data = useStaticQuery(graphql`
     query LayoutQuery {
       settings: contentfulUstawieniaSingle {
@@ -41,9 +43,23 @@ const Layout = ({ children }) => {
     }
   `)
 
+  useEffect(() => {
+    const scrollHandler = () => {
+      setIsLogoMinimized(window.innerWidth < 600 && window.scrollY > 100)
+    }
+    document.addEventListener("scroll", scrollHandler)
+    return () => document.removeEventListener(scrollHandler)
+  }, [])
+
   return (
     <main className="main">
-      <Link className="main__logo" to="/" aria-label="Home page">
+      <Link
+        className={classnames("main__logo", {
+          "main__logo--minimized": isLogoMinimized,
+        })}
+        to="/"
+        aria-label="Home page"
+      >
         <Icon type="logo" />
       </Link>
       <div className="main__hamburger">

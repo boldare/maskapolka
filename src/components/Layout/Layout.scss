@@ -68,6 +68,12 @@ $col: 144px;
     .icon {
       fill: var(--color-red);
       height: var(--logo-height);
+      transition: all 0.2s;
+    }
+
+    &--minimized .icon {
+      // transform: scale(0.5);
+      height: calc(var(--logo-height) * 0.6);
     }
   }
 

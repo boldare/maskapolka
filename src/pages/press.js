@@ -15,7 +15,7 @@ const PressPage = ({
 }) => {
   return (
     <Layout>
-      <SEO title="Materiały prasowe" />
+      <SEO title="Materiały prasowe" metaTitle="Materiały prasowe" />
       <Press packUrl={`https:${url}`} />
     </Layout>
   )

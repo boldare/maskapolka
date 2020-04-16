@@ -22,7 +22,7 @@ const ArticleTemplate = ({
 }) => {
   return (
     <Layout>
-      <SEO title={title} description={description} />
+      <SEO title={title} metaTitle={title} description={description} />
       <Article
         id={id}
         slug={slug}
