@@ -115,8 +115,8 @@ button {
 
   h1,
   h2 {
-    @extend %padding-sm--v;
-    @extend %margin-sm--v;
+    @extend %padding-md--v;
+    @extend %margin-md--v;
     line-height: 1.2;
     border-bottom: 1px solid var(--color-grey);
   }
