@@ -4,13 +4,10 @@ const productionPlugins = [
   {
     resolve: `gatsby-plugin-google-analytics`,
     options: {
-      // replace "UA-XXXXXXXXX-X" with your own Tracking ID
       trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_CODE,
     },
   },
 ]
-
-const plugins = []
 
 module.exports = {
   siteMetadata: {
