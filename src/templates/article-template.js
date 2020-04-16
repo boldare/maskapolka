@@ -22,7 +22,12 @@ const ArticleTemplate = ({
 }) => {
   return (
     <Layout>
-      <SEO title={title} metaTitle={title} description={description} />
+      <SEO
+        title={title}
+        metaTitle={title}
+        description={description}
+        cover={heroImage.file.url}
+      />
       <Article
         id={id}
         slug={slug}
@@ -56,6 +61,9 @@ export const pageQuery = graphql`
       heroImage {
         fluid {
           ...GatsbyContentfulFluid_withWebp
+        }
+        file {
+          url
         }
       }
       authors {
