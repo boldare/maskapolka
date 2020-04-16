@@ -45,7 +45,7 @@ const Article = ({ id, slug, title, body, img, authors, sources }) => {
         }}
       />
       {sources && (
-        <div className="article__sources">Źródła: {sources.join(", ")}</div>
+        <p className="article__sources">Źródła: {sources.join(", ")}</p>
       )}
       <div id="comments">
         <DiscussionEmbed

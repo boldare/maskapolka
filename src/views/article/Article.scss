@@ -67,6 +67,7 @@
   &__sources {
     @extend %margin-md--top;
     font-style: italic;
+    word-break: break-word;
   }
 
   &__author-img {
