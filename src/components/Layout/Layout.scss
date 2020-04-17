@@ -128,6 +128,7 @@ $col: 144px;
 }
 
 .nav {
+  @extend %padding-xl--top;
   @extend %padding-sm--h;
   position: fixed;
   display: flex;
@@ -138,6 +139,10 @@ $col: 144px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  @include breakpoint(md) {
+    padding-top: var(--space-xl);
+  }
 
   &__items {
     width: 100%;
@@ -158,6 +163,10 @@ $col: 144px;
 
   &__item {
     @extend %padding-sm--v;
+
+    @include breakpoint(md, "max") {
+      font-size: 2rem;
+    }
 
     &:hover {
       color: var(--color-red);
