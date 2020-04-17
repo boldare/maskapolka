@@ -30,6 +30,12 @@ export const YoutubeVideoType = {
   link: PropTypes.string.isRequired,
 }
 
+export const CollapseType = {
+  title: PropTypes.string.isRequired,
+  content: MarkdownType.isRequired,
+  contentful_id: PropTypes.string.isRequired,
+}
+
 export const BlogPostType = {
   createdAt: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

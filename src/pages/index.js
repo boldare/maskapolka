@@ -3,19 +3,13 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { SEO, Layout } from "@components"
 import { Banner, Articles, MapView, About } from "@views"
-import { BlogPostType, MarkdownType, YoutubeVideoType } from "~/types"
+import { BlogPostType, CollapseType, YoutubeVideoType } from "~/types"
 
 const IndexPage = ({
   data: {
     settings: {
       heading,
       description,
-      howToFindPlaces: {
-        childMarkdownRemark: { html: howToFind },
-      },
-      howToAddPlace: {
-        childMarkdownRemark: { html: howToAdd },
-      },
       aboutAction: {
         childMarkdownRemark: { html: about },
       },
@@ -23,6 +17,7 @@ const IndexPage = ({
     },
     postItems: { nodes: posts },
     youtubeVideos: { nodes: videos },
+    collapseItems: { nodes: collapses },
   },
 }) => {
   return (
@@ -35,7 +30,7 @@ const IndexPage = ({
       />
 
       <About description={about} />
-      <MapView howToFind={howToFind} howToAdd={howToAdd} />
+      <MapView collapses={collapses} />
       <Articles posts={posts} videos={videos} />
     </Layout>
   )
@@ -46,16 +41,6 @@ export const pageQuery = graphql`
     settings: contentfulUstawieniaSingle {
       heading
       description
-      howToFindPlaces {
-        childMarkdownRemark {
-          html
-        }
-      }
-      howToAddPlace {
-        childMarkdownRemark {
-          html
-        }
-      }
       aboutAction {
         childMarkdownRemark {
           html
@@ -84,6 +69,7 @@ export const pageQuery = graphql`
         }
       }
     }
+
     youtubeVideos: allContentfulYoutubeVideo(
       sort: { fields: createdAt, order: DESC }
     ) {
@@ -91,6 +77,18 @@ export const pageQuery = graphql`
         createdAt
         title
         link
+      }
+    }
+
+    collapseItems: allContentfulRozwijaneMenu {
+      nodes {
+        contentful_id
+        title
+        content {
+          childMarkdownRemark {
+            html
+          }
+        }
       }
     }
   }
@@ -101,14 +99,17 @@ IndexPage.propTypes = {
     settings: PropTypes.shape({
       heading: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      howToFindPlaces: MarkdownType.isRequired,
-      howToAddPlace: MarkdownType.isRequired,
       facebookLink: PropTypes.string.isRequired,
     }),
   }),
-  postItems: PropTypes.shape({ nodes: PropTypes.arrayOf(BlogPostType) }),
+  postItems: PropTypes.shape({
+    nodes: PropTypes.arrayOf(PropTypes.shape(BlogPostType)),
+  }),
   youtubeVideos: PropTypes.shape({
-    nodes: PropTypes.arrayOf(YoutubeVideoType),
+    nodes: PropTypes.arrayOf(PropTypes.shape(YoutubeVideoType)),
+  }),
+  collapseItems: PropTypes.shape({
+    nodes: PropTypes.arrayOf(PropTypes.shape(CollapseType)),
   }),
 }
 

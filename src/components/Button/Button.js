@@ -16,7 +16,7 @@ const Button = ({ children, className, color, onClick, type }) => (
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  color: PropTypes.oneOf(["red", "white"]),
+  color: PropTypes.oneOf(["red", "white", "blue"]),
   onClick: PropTypes.func,
   type: PropTypes.oneOf(["button", "submit"]),
 }
