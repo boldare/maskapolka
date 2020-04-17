@@ -7,15 +7,19 @@ import { classnames } from "~/utils"
 
 const items = [
   {
-    label: "O akcji",
+    label: "Czym jest Maska Polka?",
     link: "/#about",
   },
   {
-    label: "Prawidłowe używanie maski",
+    label: "Jak prawidłowo założyć maseczkę?",
     link: "/#how-to",
   },
   {
-    label: "Instrukcja dodawania punktów",
+    label: "Chcesz pomóc? Oznacz się na mapie!",
+    link: "/#map",
+  },
+  {
+    label: "Potrzebujesz maseczki?",
     link: "/#map",
   },
   {
@@ -23,11 +27,11 @@ const items = [
     link: "/#articles",
   },
   {
-    label: "Materiały prasowe",
+    label: "Press pack",
     link: "/press",
   },
   {
-    label: "Kontakt",
+    label: "Napisz do nas!",
     link: "/#footer",
   },
 ]
@@ -89,7 +93,7 @@ const Layout = ({ children }) => {
       {children}
       <footer className="footer" id="footer">
         <a href={`mailto:${data.settings.contactMail}`}>
-          <Button>Skontaktuj się z nami</Button>
+          <Button>Napisz do nas!</Button>
         </a>
         <div>
           Strona zaprojektowana dzięki wsparciu firmy: Boldare

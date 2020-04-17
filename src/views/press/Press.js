@@ -9,20 +9,18 @@ const Press = ({ packUrl }) => {
       <div className="press__bg"></div>
       <section className="press__pack section">
         <div className="press__heading">
-          <h1 className="heading-primary text--short">
-            Materiały prasowe o akcji:
-          </h1>
+          <h1 className="heading-primary text--short">Press pack</h1>
           <p className="press__subheading heading-secondary text--short">
-            Mamy dla Ciebie przydatne rzeczy w postaci logo, plakatów czy opisu
-            naszej akcji.
+            Chcesz pomóc nam w nagłośnieniu inicjatywy? Fantastycznie!
+            Przygotowaliśmy dla Ciebie materiały potrzebne do promocji.
           </p>
         </div>
         <div className="press__file">
           <div>
             <p className="heading-secondary text--short">Press pack.zip</p>
             <p className="press__description text--short">
-              W paczce znajdują się materiały przydatne do promocji akcji wraz z
-              opisami oraz plikami wizualnymi.
+              W naszym press packu znajdziesz pliki wizualne (logo, plakaty) i
+              opis inicjatywy.
             </p>
           </div>
           <a href={packUrl} target="_blank" rel="noopener noreferrer">

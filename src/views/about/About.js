@@ -31,7 +31,7 @@ const About = ({ description }) => {
         }}
       ></div>
       <p className="about__paragraph heading-secondary" id="how-to">
-        Jak poprawnie używać maseczki
+        Jak prawidłowo założyć maseczkę?
       </p>
       <ol className="about__instruction">
         {steps.map((step, i) => (

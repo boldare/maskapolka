@@ -12,7 +12,7 @@ const MapView = ({ howToFind, howToAdd }) => {
       <section className="map-view__faq section" id="map">
         <Collapse
           open={isHowToFindOpen}
-          title={"Jak znaleźć miejsca"}
+          title={"Potrzebujesz maseczki?"}
           onClick={() => setIsHowToFindOpen(!isHowToFindOpen)}
         >
           <div
@@ -24,7 +24,7 @@ const MapView = ({ howToFind, howToAdd }) => {
         </Collapse>
         <Collapse
           open={isHowToAddOpen}
-          title={"Jak dodawać punkty na mapie"}
+          title={"Chcesz pomóc? Oznacz się na mapie!"}
           onClick={() => setIsHowToAddOpen(!isHowToAddOpen)}
         >
           <div

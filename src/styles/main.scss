@@ -156,6 +156,7 @@ button {
   ul,
   ol {
     margin-left: 1em;
+    line-height: 1.5;
 
     li {
       @extend %padding-md--left;
