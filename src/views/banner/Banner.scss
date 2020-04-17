@@ -19,7 +19,9 @@ $scroll-down-height: 6rem;
   }
 
   &__paragraph {
-    font-size: 2.4rem;
+    @include breakpoint("lg") {
+      font-size: 2.4rem;
+    }
   }
 
   &__bg {
