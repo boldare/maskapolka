@@ -11,8 +11,12 @@
   &__map {
     grid-row: 4 / 5;
     grid-column: 1 / -1;
-    height: 75vh;
+    height: 60vh;
     padding-left: 0;
     padding-right: 0;
+
+    @include breakpoint(md) {
+      height: 75vh;
+    }
   }
 }
