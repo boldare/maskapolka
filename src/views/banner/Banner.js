@@ -26,7 +26,7 @@ const Banner = ({ heading, description, facebookLink }) => {
             Znajdź punkt
           </Button>
           <a
-            href="https://www.mapotic.com/maskapolka-1/"
+            href="https://mapa.maskapolka.pl/"
             target="_blank"
             rel="noopener noreferrer"
           >
