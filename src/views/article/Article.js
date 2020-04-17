@@ -21,12 +21,12 @@ const Article = ({ id, slug, title, body, img, authors, sources }) => {
               )}
               <div>
                 {author.name}
-                {author.email && (
+                {/* {author.email && (
                   <>
                     <br />
                     {author.email}
                   </>
-                )}
+                )} */}
               </div>
             </li>
           ))}

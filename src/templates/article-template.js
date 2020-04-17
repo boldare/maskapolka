@@ -70,7 +70,6 @@ export const pageQuery = graphql`
       postSources
       authors {
         name
-        email
         image {
           fluid(maxWidth: 100) {
             ...GatsbyContentfulFluid_withWebp
