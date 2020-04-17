@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 
-import { SEO } from "@components"
+import { navigate } from "gatsby"
 
 const NotFoundPage = () => {
   useEffect(() => {
