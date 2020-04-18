@@ -15,6 +15,10 @@ const items = [
     link: "/#how-to",
   },
   {
+    label: "Załóż maskomat",
+    link: "/#map",
+  },
+  {
     label: "Chcesz pomóc? Oznacz się na mapie!",
     link: "/#map",
   },
