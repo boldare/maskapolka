@@ -182,6 +182,6 @@ button {
   img {
     @extend %margin-lg--v;
     display: block;
-    width: 100%;
+    max-width: 100%;
   }
 }
