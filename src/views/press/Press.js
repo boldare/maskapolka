@@ -10,7 +10,7 @@ const Press = ({ packUrl }) => {
       <section className="press__pack section">
         <div className="press__heading">
           <h1 className="heading-primary text--short">Press pack</h1>
-          <p className="press__subheading heading-secondary text--short">
+          <p className="press__subheading heading-secondary">
             Chcesz pomóc nam w nagłośnieniu inicjatywy? Fantastycznie!
             Przygotowaliśmy dla Ciebie materiały potrzebne do promocji.
           </p>
@@ -26,6 +26,13 @@ const Press = ({ packUrl }) => {
           <a href={packUrl} target="_blank" rel="noopener noreferrer">
             <Button color="white">Pobierz Press pack.zip</Button>
           </a>
+        </div>
+        <div className="inner-html">
+          Skontaktuj się z nami, wysyłając maila na{" "}
+          <a href="mailto:media.maskapolka@gmail.com">
+            media.maskapolka@gmail.com
+          </a>
+          .
         </div>
       </section>
       <h2 class="heading-primary press__heading-secondary">
