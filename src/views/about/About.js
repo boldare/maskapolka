@@ -22,7 +22,7 @@ const steps = [
     icon: "instruction3",
   },
   {
-    title: "Wymień mask po kilku godzinach lub kiedy stanie się wilgotna",
+    title: "Wymień maskę po kilku godzinach lub kiedy stanie się wilgotna",
     icon: "instruction4",
   },
   {

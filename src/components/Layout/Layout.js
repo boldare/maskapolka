@@ -102,7 +102,7 @@ const Layout = ({ children }) => {
         <div>
           Strona zaprojektowana dzięki wsparciu firmy: Boldare
           <br />
-          Wszelkie prawa zastrzeone przez MaskaPolka.pl | 2020
+          Wszelkie prawa zastrzeżone przez MaskaPolka.pl | 2020
         </div>
       </footer>
       <img
