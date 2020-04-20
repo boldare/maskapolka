@@ -6,6 +6,10 @@
     @include breakpoint(md) {
       grid-column: 2 / 10;
     }
+
+    &.section {
+      padding-top: 0;
+    }
   }
 
   &__map {

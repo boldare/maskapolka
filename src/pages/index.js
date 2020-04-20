@@ -14,10 +14,11 @@ const IndexPage = ({
         childMarkdownRemark: { html: about },
       },
       facebookLink,
+      collapsesTop,
+      collapsesBottom,
     },
     postItems: { nodes: posts },
     youtubeVideos: { nodes: videos },
-    collapseItems: { nodes: collapses },
   },
 }) => {
   return (
@@ -29,8 +30,8 @@ const IndexPage = ({
         facebookLink={facebookLink}
       />
 
-      <About description={about} />
-      <MapView collapses={collapses} />
+      <About description={about} collapses={collapsesTop} />
+      <MapView collapses={collapsesBottom} />
       <Articles posts={posts} videos={videos} />
     </Layout>
   )
@@ -47,6 +48,24 @@ export const pageQuery = graphql`
         }
       }
       facebookLink
+      collapsesTop {
+        contentful_id
+        title
+        content {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+      collapsesBottom {
+        contentful_id
+        title
+        content {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
     }
 
     postItems: allContentfulBlogPost(
@@ -79,18 +98,6 @@ export const pageQuery = graphql`
         link
       }
     }
-
-    collapseItems: allContentfulRozwijaneMenu {
-      nodes {
-        contentful_id
-        title
-        content {
-          childMarkdownRemark {
-            html
-          }
-        }
-      }
-    }
   }
 `
 
@@ -100,6 +107,12 @@ IndexPage.propTypes = {
       heading: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       facebookLink: PropTypes.string.isRequired,
+      collapsesTop: PropTypes.shape({
+        nodes: PropTypes.arrayOf(PropTypes.shape(CollapseType)),
+      }),
+      collapsesBottom: PropTypes.shape({
+        nodes: PropTypes.arrayOf(PropTypes.shape(CollapseType)),
+      }),
     }),
   }),
   postItems: PropTypes.shape({
@@ -107,9 +120,6 @@ IndexPage.propTypes = {
   }),
   youtubeVideos: PropTypes.shape({
     nodes: PropTypes.arrayOf(PropTypes.shape(YoutubeVideoType)),
-  }),
-  collapseItems: PropTypes.shape({
-    nodes: PropTypes.arrayOf(PropTypes.shape(CollapseType)),
   }),
 }
 

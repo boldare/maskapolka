@@ -8,6 +8,12 @@
 
   .heading-primary {
     max-width: 80rem;
+    color: var(--color-red);
+  }
+
+  #how-to {
+    margin-top: var(--space-md);
+    margin-bottom: 0;
   }
 
   &__paragraph {
@@ -16,8 +22,39 @@
 
   &__instruction {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: var(--space-md);
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  &__instruction-item {
+    @extend %padding-lg--v;
+    @extend %padding-sm--h;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__arrow {
+    width: 100%;
+    height: 100%;
+
+    &--left {
+      background-color: white;
+      use {
+        transform: rotate(90deg);
+        transform-origin: center;
+      }
+    }
+
+    &--right {
+      background-color: var(--color-red);
+      fill: white;
+
+      use {
+        transform: rotate(-90deg);
+        transform-origin: center;
+      }
+    }
   }
 
   &__icon-wrapper {
@@ -37,19 +74,37 @@
       position: absolute;
       height: 100%;
     }
+  }
 
-    &::after {
-      content: "";
-      position: absolute;
-      margin-top: var(--space-md);
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: var(--color-bg);
-      border-radius: 50%;
-      z-index: -1;
+  .slick-slider {
+    @extend %padding-lg--h;
+  }
+
+  .slick-arrow {
+    transform: translateY(-50px);
+    width: 3.5rem;
+    height: 3.5rem;
+    z-index: 1;
+
+    &::before {
+      display: none;
     }
+  }
+
+  .slick-list:focus {
+    outline: none;
+  }
+
+  .slick-prev {
+    left: 0;
+  }
+
+  .slick-next {
+    right: 0;
+  }
+
+  .slick-disabled {
+    opacity: 0.5;
+    cursor: no-drop;
   }
 }

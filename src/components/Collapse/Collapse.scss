@@ -11,15 +11,20 @@
     display: flex;
     justify-content: space-between;
     max-width: unset;
+    color: var(--color-light-black);
   }
 
-  &--open &__icon {
+  &--open &__icon use {
     transform: rotate(180deg);
+    transform-origin: center;
   }
 
   &__icon {
     height: 3rem;
-    transition: all 0.2s;
+
+    use {
+      transition: all 0.2s;
+    }
   }
 
   &__content {

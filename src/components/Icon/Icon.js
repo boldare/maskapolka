@@ -11,6 +11,8 @@ import iluStart2 from "../../images/Ilu_Start_2.svg"
 import instruction1 from "../../images/instruction-1.svg"
 import instruction2 from "../../images/instruction-2.svg"
 import instruction3 from "../../images/instruction-3.svg"
+import instruction4 from "../../images/instruction-4.svg"
+import instruction5 from "../../images/instruction-5.svg"
 import facebookLogo from "../../images/facebook.svg"
 import { classnames } from "~/utils"
 
@@ -23,6 +25,8 @@ const icons = {
   instruction1: instruction1,
   instruction2: instruction2,
   instruction3: instruction3,
+  instruction4: instruction4,
+  instruction5: instruction5,
   logo: logo,
   pin: pin,
   plus: plus,
