@@ -99,12 +99,27 @@ const Layout = ({ children }) => {
         <a href={`mailto:${data.settings.contactMail}`}>
           <Button>Napisz do nas!</Button>
         </a>
-        <div>
-          Strona zaprojektowana dzięki wsparciu firmy: Boldare
-          <br />
-          Wszelkie prawa zastrzeżone przez MaskaPolka.pl | 2020
-        </div>
+        <div>Strona zaprojektowana dzięki wsparciu firmy:</div>
+        <a
+          className="footer__boldare"
+          href="https://boldare.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Boldare"
+        >
+          <Icon type="logoBoldare" />
+        </a>
+        <div>Wszelkie prawa zastrzeżone przez MaskaPolka.pl | 2020</div>
       </footer>
+      <a
+        className="footer__diff"
+        href="https://www.facebook.com/diffarts"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Different Arts"
+      >
+        <Icon type="sygnetDiff" />
+      </a>
       <img
         className="footer__icon"
         src="/images/Ilu_Footer.svg"

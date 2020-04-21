@@ -13,7 +13,9 @@ import instruction2 from "../../images/instruction-2.svg"
 import instruction3 from "../../images/instruction-3.svg"
 import instruction4 from "../../images/instruction-4.svg"
 import instruction5 from "../../images/instruction-5.svg"
+import logoBoldare from "../../images/logo-boldare.svg"
 import facebookLogo from "../../images/facebook.svg"
+import sygnetDiff from "../../images/sygnet-diff.svg"
 import { classnames } from "~/utils"
 
 const icons = {
@@ -27,6 +29,8 @@ const icons = {
   instruction3: instruction3,
   instruction4: instruction4,
   instruction5: instruction5,
+  logoBoldare: logoBoldare,
+  sygnetDiff: sygnetDiff,
   logo: logo,
   pin: pin,
   plus: plus,

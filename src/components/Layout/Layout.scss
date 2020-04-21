@@ -7,6 +7,7 @@
   font-size: 1.4rem;
   line-height: 2;
   background-color: var(--color-bg);
+  text-align: right;
 
   @include breakpoint(md) {
     padding-bottom: var(--space-xl);
@@ -14,6 +15,12 @@
     grid-row: 6 / 7;
     grid-column: 7 / 10;
     background-color: transparent;
+  }
+
+  &__boldare {
+    display: block;
+    margin-left: auto;
+    width: 50%;
   }
 
   .button {
@@ -32,6 +39,22 @@
 
     grid-column: 1 / -1;
     grid-row: 6 / 7;
+  }
+
+  &__diff {
+    @extend %margin-sm;
+    @extend %padding-xl--bottom;
+    width: 5rem;
+    z-index: 1;
+    grid-row: 7 / 8;
+    grid-column: 2;
+    justify-self: end;
+
+    @include breakpoint(md) {
+      grid-column: 2;
+      grid-row: 6 / 7;
+      align-self: end;
+    }
   }
 }
 
