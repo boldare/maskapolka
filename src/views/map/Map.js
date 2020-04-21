@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { Collapse, MapFrame } from "@components"
+import { Collapse, MapFrame, Button, Icon } from "@components"
 import "./Map.scss"
 import { CollapseType } from "~/types"
 
@@ -36,6 +36,14 @@ const MapView = ({ collapses }) => {
           </Collapse>
         ))}
       </section>
+      <a
+        className="map-view__btn"
+        href="https://mapa.maskapolka.pl/add"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button color="white">Dodaj punkt</Button>
+      </a>
       <MapFrame className="map-view__map section" />
     </>
   )

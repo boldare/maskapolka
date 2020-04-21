@@ -23,4 +23,18 @@
       height: 75vh;
     }
   }
+
+  &__btn {
+    @extend %padding-sm--left;
+    @extend %margin-md--bottom;
+    grid-row: 4 / 5;
+    grid-column: 1;
+    align-self: end;
+    z-index: 1;
+
+    @include breakpoint(md) {
+      padding-left: 0;
+      grid-column: 2;
+    }
+  }
 }
