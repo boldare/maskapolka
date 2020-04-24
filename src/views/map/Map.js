@@ -42,7 +42,9 @@ const MapView = ({ collapses }) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Button color="white">Dodaj punkt</Button>
+        <Button color="red" shake>
+          Dodaj punkt
+        </Button>
       </a>
       <MapFrame className="map-view__map section" />
     </>
