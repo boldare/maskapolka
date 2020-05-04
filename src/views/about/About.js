@@ -34,7 +34,7 @@ const steps = [
 
 const SliderArrow = ({ className, onClick, prev = false }) => {
   return (
-    <div className={className} onClick={onClick}>
+    <button className={className} onClick={onClick}>
       <Icon
         className={classnames(
           "about__arrow",
@@ -44,7 +44,7 @@ const SliderArrow = ({ className, onClick, prev = false }) => {
         round
         shadow
       />
-    </div>
+    </button>
   )
 }
 

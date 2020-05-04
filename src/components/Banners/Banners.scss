@@ -1,0 +1,16 @@
+.banners {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include breakpoint(md) {
+    flex-direction: row;
+  }
+
+  &__banner {
+    @extend %margin-sm;
+    width: 20rem;
+  }
+}

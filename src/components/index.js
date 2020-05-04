@@ -1,4 +1,5 @@
 import ArticleTile from "./ArticleTile/ArticleTile"
+import Banners from "./Banners/Banners"
 import Button from "./Button/Button"
 import Collapse from "./Collapse/Collapse"
 import FacebookButton from "./FacebookButton/FacebookButton"
@@ -12,6 +13,7 @@ import YoutubeTile from "./YoutubeTile/YoutubeTile"
 
 export {
   ArticleTile,
+  Banners,
   Button,
   Collapse,
   Icon,

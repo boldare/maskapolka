@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import { SEO, Layout } from "@components"
-import { Banner, Articles, MapView, About } from "@views"
+import { Banner, Articles, MapView, About, SupportersBanners } from "@views"
 import { BlogPostType, CollapseType, YoutubeVideoType } from "~/types"
 
 const IndexPage = ({
@@ -16,6 +16,7 @@ const IndexPage = ({
       facebookLink,
       collapsesTop,
       collapsesBottom,
+      mediaPartners,
     },
     postItems: { nodes: posts },
     youtubeVideos: { nodes: videos },
@@ -33,6 +34,7 @@ const IndexPage = ({
       <About description={about} collapses={collapsesTop} />
       <MapView collapses={collapsesBottom} />
       <Articles posts={posts} videos={videos} />
+      <SupportersBanners mediaPartners={mediaPartners} />
     </Layout>
   )
 }
@@ -64,6 +66,11 @@ export const pageQuery = graphql`
           childMarkdownRemark {
             html
           }
+        }
+      }
+      mediaPartners {
+        fluid(maxWidth: 400) {
+          ...GatsbyContentfulFluid_withWebp
         }
       }
     }
@@ -107,12 +114,8 @@ IndexPage.propTypes = {
       heading: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       facebookLink: PropTypes.string.isRequired,
-      collapsesTop: PropTypes.shape({
-        nodes: PropTypes.arrayOf(PropTypes.shape(CollapseType)),
-      }),
-      collapsesBottom: PropTypes.shape({
-        nodes: PropTypes.arrayOf(PropTypes.shape(CollapseType)),
-      }),
+      collapsesTop: PropTypes.arrayOf(PropTypes.shape(CollapseType)),
+      collapsesBottom: PropTypes.arrayOf(PropTypes.shape(CollapseType)),
     }),
   }),
   postItems: PropTypes.shape({

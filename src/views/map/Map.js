@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { Collapse, MapFrame, Button, Icon } from "@components"
+import { Collapse, MapFrame, Button } from "@components"
 import "./Map.scss"
 import { CollapseType } from "~/types"
 

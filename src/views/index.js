@@ -4,5 +4,6 @@ import Articles from "./articles/Articles"
 import Banner from "./banner/Banner"
 import MapView from "./map/Map"
 import Press from "./press/Press"
+import SupportersBanners from "./supporters-banners/SupportersBanners"
 
-export { About, Article, Articles, Banner, MapView, Press }
+export { About, Article, Articles, Banner, MapView, Press, SupportersBanners }
