@@ -69,8 +69,11 @@ export const pageQuery = graphql`
         }
       }
       mediaPartners {
-        fluid(maxWidth: 400) {
-          ...GatsbyContentfulFluid_withWebp
+        link
+        img {
+          fluid(maxWidth: 400) {
+            ...GatsbyContentfulFluid_withWebp
+          }
         }
       }
     }

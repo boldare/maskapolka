@@ -8,8 +8,15 @@ const Banners = ({ banners }) => {
   return (
     <ul className="banners">
       {banners.map(banner => (
-        <li key="">
-          <Image className="banners__banner" fluid={banner.fluid} />
+        <li key={banner.link}>
+          <a
+            href={banner.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={banner.link}
+          >
+            <Image className="banners__banner" fluid={banner.img.fluid} />
+          </a>
         </li>
       ))}
     </ul>
